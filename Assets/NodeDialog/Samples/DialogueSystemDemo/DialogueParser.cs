@@ -11,12 +11,23 @@ namespace Subtegral.DialogueSystem.Runtime
 {
     public class DialogueParser : MonoBehaviour
     {
+        public static DialogueParser instance = null;
         [SerializeField] private List<DialogHolder> dialogues = new List<DialogHolder>();
 
         [SerializeField] private Button choicePrefab;
 
         List<string> triggersObtained = new List<string>();
         int secondsPassed = 0;
+
+
+        private void Awake()
+        {
+            if (instance == null)
+                instance = this;
+            else
+                Destroy(this);
+        }
+
         private void Start()
         {
             StartCoroutine(AutomatedDialog());
@@ -33,6 +44,17 @@ namespace Subtegral.DialogueSystem.Runtime
                     TriggerConversation(dialogues.Find(x => x.dialogContainer.isAutomated && secondsPassed > x.dialogContainer.timeToTrigger && secondsPassed -1f <= x.dialogContainer.timeToTrigger).dialogContainer);
                 }
             }
+        }
+
+
+        public void TriggerConversation(int index)
+        {
+            Debug.Log("Triggered Convo");
+            var narrativeData = dialogues[index].dialogContainer.NodeLinks.First(); //Entrypoint node
+
+
+
+            ProceedToNarrative(dialogues.Find(x => x.dialogContainer == dialogues[index].dialogContainer), narrativeData.TargetNodeGUID);
         }
 
         public void TriggerConversation(DialogueContainer dialogToTrigger)
@@ -98,7 +120,7 @@ namespace Subtegral.DialogueSystem.Runtime
             foreach (var choice in choices)
             {
                 string[] words = choice.PortName.Split(' ');
-                if (words[0][0] == '@')
+                if (words.Length>0 && words[0][0] == '@')
                 {
                     words[0]= words[0].Remove(0,1);
                     if (triggersObtained.Exists(x => x == words[0]))

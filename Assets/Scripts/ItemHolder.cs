@@ -22,7 +22,7 @@ public class ItemHolder : MonoBehaviour
 
     private void OnMouseUp()
     {
-        transform.position = lastPos;
+        transform.localPosition = Vector3.zero;
     }
 
 }

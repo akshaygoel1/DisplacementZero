@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     public SpriteRenderer slot1, slot2, slot3;
     int count =0;
     public static Inventory instance = null;
-
+    List<Item> itemsInSlot = new List<Item>();
     private void Awake()
     {
         if (instance == null)
@@ -19,22 +19,22 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(string itemType)
     {
-
+        itemsInSlot.Add(spriteLib.Find(x => x.itemName == itemType).item);
         GameObject g = Instantiate(spriteLib.Find(x => x.itemName == itemType).itemPrefab, Vector3.zero, Quaternion.identity);
         if (count == 0)
         {
             g.transform.SetParent(slot1.transform);
-            g.transform.position = Vector3.zero;
+            g.transform.localPosition = Vector3.zero;
         }
         else if (count == 1)
         {
             g.transform.SetParent(slot2.transform);
-            g.transform.position = Vector3.zero;
+            g.transform.localPosition = Vector3.zero;
         }
         else if (count == 2)
         {
             g.transform.SetParent(slot3.transform);
-            g.transform.position = Vector3.zero;
+            g.transform.localPosition = Vector3.zero;
         }
         else
         {
@@ -46,22 +46,23 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item itemType)
     {
+        itemsInSlot.Add(itemType);
 
         GameObject g = Instantiate(spriteLib.Find(x => x.item == itemType).itemPrefab, Vector3.zero, Quaternion.identity);
         if (count == 0)
         {
-            g.transform.SetParent(slot1.transform);
-            g.transform.position = Vector3.zero;
+            g.transform.SetParent(slot1.transform, true);
+            g.transform.localPosition = Vector3.zero;
         }
         else if (count == 1)
         {
-            g.transform.SetParent(slot2.transform);
-            g.transform.position = Vector3.zero;
+            g.transform.SetParent(slot2.transform, true);
+            g.transform.localPosition = Vector3.zero;
         }
         else if (count == 2)
         {
-            g.transform.SetParent(slot3.transform);
-            g.transform.position = Vector3.zero;
+            g.transform.SetParent(slot3.transform, true);
+            g.transform.localPosition = Vector3.zero;
         }
         else
         {
@@ -70,10 +71,22 @@ public class Inventory : MonoBehaviour
         count++;
     }
 
-    public void RemoveItem()
+    public void RemoveItem(Item itemType)
     {
+        itemsInSlot.Remove(itemType);
+
         count--;
         RefreshSlots();
+    }
+
+
+    public bool InventoryContains(Item item)
+    {
+        if (itemsInSlot.Contains(item))
+        {
+            return true;
+        }
+        return false;
     }
 
     void RefreshSlots()
@@ -115,7 +128,8 @@ public class Inventory : MonoBehaviour
 public enum Item
 {
     None,
-    Screwdriver
+    Screwdriver,
+    Ticket
 }
 [System.Serializable]
 public class SpriteLibrary
