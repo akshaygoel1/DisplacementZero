@@ -76,6 +76,12 @@ namespace Subtegral.DialogueSystem.Runtime
             {
                 Destroy(buttons[i].gameObject);
             }
+
+            if(choices.Count() == 0)
+            {
+                StartCoroutine(HideConvo(dialogue));
+            }
+
             if(choices.Count() == 1)
             {
                 IEnumerator enumerator = choices.GetEnumerator();
@@ -118,6 +124,11 @@ namespace Subtegral.DialogueSystem.Runtime
             }
         }
 
+        IEnumerator HideConvo(DialogHolder dialog)
+        {
+            yield return new WaitForSeconds(2);
+            dialog.canvas.SetActive(false);
+        }
         IEnumerator DelayedConversation(DialogHolder dialog, NodeLinkData node)
         {
             yield return new WaitForSeconds(2);

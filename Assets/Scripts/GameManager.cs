@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
@@ -42,10 +43,15 @@ public class GameManager : MonoBehaviour
             timerCounter--;
             string s = "0" + (Mathf.FloorToInt(timerCounter / 60)).ToString() + ":" + (timerCounter % 60).ToString();
             timer.text = s;
+
+            if (timerCounter <= 0)
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
         }
     }
 
-    private IEnumerator _ProcessShake(float shakeIntensity = 7f, float shakeTiming = 0.5f)
+    private IEnumerator _ProcessShake(float shakeIntensity =3f, float shakeTiming = 0.5f)
     {
         while (true)
         {
