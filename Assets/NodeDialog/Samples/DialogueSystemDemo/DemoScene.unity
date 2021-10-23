@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ccaca0d7c48634d8e70996696a3c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 563010b8721595d49bf1898e6c1000c1, type: 2}
+  dialogue: {fileID: 11400000, guid: 80521c457ee66b74dbb625f8be71d4be, type: 2}
   dialogueText: {fileID: 1818617936}
   choicePrefab: {fileID: 3102500559854669817, guid: f77c89383fd59cd47a1921c9684d4122,
     type: 3}

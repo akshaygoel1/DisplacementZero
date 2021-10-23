@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Trial2
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: e4d4f253-b86d-4b87-b77e-e930c82615bf
+    PortName: Next
+    TargetNodeGUID: 68f73933-af7d-418e-8592-036832bf9bbd
+  - BaseNodeGUID: 68f73933-af7d-418e-8592-036832bf9bbd
+    PortName: Lol what?
+    TargetNodeGUID: 44736959-073b-46fc-aca3-52fdae42eb64
+  - BaseNodeGUID: 44736959-073b-46fc-aca3-52fdae42eb64
+    PortName: '@understood What''s up dog?'
+    TargetNodeGUID: af47828c-8da6-4f1d-8e49-b96678a4e91c
+  - BaseNodeGUID: 44736959-073b-46fc-aca3-52fdae42eb64
+    PortName: funny!
+    TargetNodeGUID: af47828c-8da6-4f1d-8e49-b96678a4e91c
+  DialogueNodeData:
+  - NodeGUID: 68f73933-af7d-418e-8592-036832bf9bbd
+    DialogueText: up dog
+    Position: {x: 219, y: 204}
+  - NodeGUID: af47828c-8da6-4f1d-8e49-b96678a4e91c
+    DialogueText: hahahhahaha
+    Position: {x: 816, y: 270}
+  - NodeGUID: 44736959-073b-46fc-aca3-52fdae42eb64
+    DialogueText: get it?
+    Position: {x: 446, y: 205}
+  ExposedProperties: []
+  CommentBlockData: []
