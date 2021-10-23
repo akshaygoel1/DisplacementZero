@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: trial33
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: 06c73ebf-bbc6-4886-b350-9d0e8a96c2ec
+    PortName: Next
+    TargetNodeGUID: 9eaf93a6-d8bd-4c16-a1b4-ab12771934b9
+  - BaseNodeGUID: 9eaf93a6-d8bd-4c16-a1b4-ab12771934b9
+    PortName: Option 1
+    TargetNodeGUID: 042a12ee-304f-42dd-aca8-ced34bb94c5c
+  - BaseNodeGUID: 9eaf93a6-d8bd-4c16-a1b4-ab12771934b9
+    PortName: Option 2
+    TargetNodeGUID: 406db4de-5d7d-4af7-8ba6-faecc936366a
+  DialogueNodeData:
+  - NodeGUID: 9eaf93a6-d8bd-4c16-a1b4-ab12771934b9
+    DialogueText: Dialogue Node
+    Position: {x: 295, y: 192}
+  - NodeGUID: 042a12ee-304f-42dd-aca8-ced34bb94c5c
+    DialogueText: Dialogue Node
+    Position: {x: 525, y: 141}
+  - NodeGUID: 406db4de-5d7d-4af7-8ba6-faecc936366a
+    DialogueText: Dialogue Node
+    Position: {x: 577, y: 309}
+  ExposedProperties: []
+  CommentBlockData: []

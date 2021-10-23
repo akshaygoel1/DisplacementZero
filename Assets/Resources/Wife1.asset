@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Wife1
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: d8734e4d-82fd-47ee-804a-166270da45b6
+    PortName: Next
+    TargetNodeGUID: 524ea832-24ef-49f8-a789-87f9208a3c0d
+  - BaseNodeGUID: 524ea832-24ef-49f8-a789-87f9208a3c0d
+    PortName: I needed a moment.
+    TargetNodeGUID: 30d7caa0-debc-4887-aa98-942ea733ae7e
+  - BaseNodeGUID: 524ea832-24ef-49f8-a789-87f9208a3c0d
+    PortName: I went out for a smoke.
+    TargetNodeGUID: fa54f734-33bc-4cb2-830b-8f944cfd5b94
+  - BaseNodeGUID: 30d7caa0-debc-4887-aa98-942ea733ae7e
+    PortName: ' -'
+    TargetNodeGUID: ebab5e1c-ec15-4005-857d-d8357a248b6a
+  - BaseNodeGUID: fa54f734-33bc-4cb2-830b-8f944cfd5b94
+    PortName: ...
+    TargetNodeGUID: b9dccf5a-0a8a-4409-8a22-862a231a5906
+  - BaseNodeGUID: ebab5e1c-ec15-4005-857d-d8357a248b6a
+    PortName: ...
+    TargetNodeGUID: b9dccf5a-0a8a-4409-8a22-862a231a5906
+  - BaseNodeGUID: b9dccf5a-0a8a-4409-8a22-862a231a5906
+    PortName: '-'
+    TargetNodeGUID: d79feef5-4407-4477-bee6-b2f646ab5986
+  - BaseNodeGUID: d79feef5-4407-4477-bee6-b2f646ab5986
+    PortName: maybe we should have left early then.
+    TargetNodeGUID: 99177736-2089-4150-a4c3-894169ce1a1e
+  DialogueNodeData:
+  - NodeGUID: 524ea832-24ef-49f8-a789-87f9208a3c0d
+    DialogueText: I was wondering where you ran off to.
+    Position: {x: 256, y: 179}
+  - NodeGUID: 30d7caa0-debc-4887-aa98-942ea733ae7e
+    DialogueText: And i thought we would be spending this time together.
+    Position: {x: 645, y: 180}
+  - NodeGUID: ebab5e1c-ec15-4005-857d-d8357a248b6a
+    DialogueText: Silly me.
+    Position: {x: 1118, y: 178}
+  - NodeGUID: b9dccf5a-0a8a-4409-8a22-862a231a5906
+    DialogueText: That's okay. I have Mr.Suitcase to keep me company, like usual.
+    Position: {x: 1361, y: 205}
+  - NodeGUID: 99177736-2089-4150-a4c3-894169ce1a1e
+    DialogueText: Maybe if you weren't hungover in the morning.
+    Position: {x: 2471, y: 191}
+  - NodeGUID: fa54f734-33bc-4cb2-830b-8f944cfd5b94
+    DialogueText: You spend more time with that ciggarette box that you did with
+      me.
+    Position: {x: 646, y: 293}
+  - NodeGUID: d79feef5-4407-4477-bee6-b2f646ab5986
+    DialogueText: We left in such a hurry that we didnt get a chance to grab a drink
+    Position: {x: 1915, y: 194}
+  ExposedProperties: []
+  CommentBlockData: []
