@@ -30,4 +30,13 @@ public class CharacterController : MonoBehaviour
 
         }
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Start")
+        {
+            GameManager.instance.StartTimer();
+        }
+    }
 }
