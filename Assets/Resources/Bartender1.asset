@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Bartender1
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: 23d5982d-0575-4782-85e3-009176d19549
+    PortName: Drown what?
+    TargetNodeGUID: 06305296-1666-4099-9dc3-6a69f30399d1
+  - BaseNodeGUID: 23d5982d-0575-4782-85e3-009176d19549
+    PortName: Could i have a glass of gin with maltese ice blocks
+    TargetNodeGUID: 1aef67d7-f4c6-4686-9539-2f54b827f953
+  - BaseNodeGUID: 06305296-1666-4099-9dc3-6a69f30399d1
+    PortName: Could i have a glass of vodka with maltese ice blocks
+    TargetNodeGUID: 1aef67d7-f4c6-4686-9539-2f54b827f953
+  - BaseNodeGUID: 1aef67d7-f4c6-4686-9539-2f54b827f953
+    PortName: thanks.
+    TargetNodeGUID: 2528496d-4eb0-4fc5-9fbf-79b1146642fe
+  - BaseNodeGUID: 2528496d-4eb0-4fc5-9fbf-79b1146642fe
+    PortName: erm...
+    TargetNodeGUID: beae6dd7-cfa8-49e9-a8ff-ba978f9fe491
+  - BaseNodeGUID: beae6dd7-cfa8-49e9-a8ff-ba978f9fe491
+    PortName: Alright.The ticket leads to...
+    TargetNodeGUID: e224d849-5f28-4986-8203-55b2150cadfc
+  - BaseNodeGUID: e224d849-5f28-4986-8203-55b2150cadfc
+    PortName: okay, I'll pass it to him. Thanks for the drink.
+    TargetNodeGUID: 0218be82-6737-4259-a906-b7d31d090279
+  DialogueNodeData:
+  - NodeGUID: 06305296-1666-4099-9dc3-6a69f30399d1
+    DialogueText: Whatever is bothering your heart tonight.
+    Position: {x: 699, y: 150}
+  - NodeGUID: 23d5982d-0575-4782-85e3-009176d19549
+    DialogueText: What'ya want to drink tonight buddy? to drown them.
+    Position: {x: 203, y: 185}
+  - NodeGUID: 1aef67d7-f4c6-4686-9539-2f54b827f953
+    DialogueText: Alright pal, here ya go!
+    Position: {x: 1246, y: 204}
+  - NodeGUID: 2528496d-4eb0-4fc5-9fbf-79b1146642fe
+    DialogueText: "umm\u2026need a favour , this kid forgot his ticket when he came
+      by, could\u2019ya pass it over to him"
+    Position: {x: 1567, y: 201}
+  - NodeGUID: beae6dd7-cfa8-49e9-a8ff-ba978f9fe491
+    DialogueText: If you do that for me, ya drink is on da house pal!
+    Position: {x: 2297, y: 204}
+  - NodeGUID: e224d849-5f28-4986-8203-55b2150cadfc
+    DialogueText: The compartment next door! _Ticket
+    Position: {x: 2776, y: 200}
+  - NodeGUID: 0218be82-6737-4259-a906-b7d31d090279
+    DialogueText: 'Cheers! '
+    Position: {x: 3220, y: 200}
+  ExposedProperties: []
+  CommentBlockData:
+  - ChildNodes: []
+    Position: {x: 255, y: 511}
+    Title: Comment Block
