@@ -11,8 +11,7 @@ namespace Subtegral.DialogueSystem.DataContainers
         public float timeToTrigger = 0f;
         public bool isAutomated = false;
         public string triggerOnObject = "";
-        [SerializeField] public Text dialogueText;
-        [SerializeField] public Transform buttonContainer;
+
         public List<NodeLinkData> NodeLinks = new List<NodeLinkData>();
         public List<DialogueNodeData> DialogueNodeData = new List<DialogueNodeData>();
         public List<ExposedProperty> ExposedProperties = new List<ExposedProperty>();

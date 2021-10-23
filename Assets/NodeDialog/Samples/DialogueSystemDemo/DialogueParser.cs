@@ -11,28 +11,51 @@ namespace Subtegral.DialogueSystem.Runtime
 {
     public class DialogueParser : MonoBehaviour
     {
-        [SerializeField] private List<DialogueContainer> dialogues = new List<DialogueContainer>();
+        [SerializeField] private List<DialogHolder> dialogues = new List<DialogHolder>();
 
         [SerializeField] private Button choicePrefab;
 
         List<string> triggersObtained = new List<string>();
+        int secondsPassed = 0;
+        private void Start()
+        {
+            StartCoroutine(AutomatedDialog());
+        }
+
+        IEnumerator AutomatedDialog()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(1);
+                secondsPassed++;
+                if(dialogues.Exists(x=> x.dialogContainer.isAutomated && secondsPassed >x.dialogContainer.timeToTrigger && secondsPassed - 1.6f < x.dialogContainer.timeToTrigger))
+                {
+                    TriggerConversation(dialogues.Find(x => x.dialogContainer.isAutomated && secondsPassed > x.dialogContainer.timeToTrigger && secondsPassed -1f <= x.dialogContainer.timeToTrigger).dialogContainer);
+                }
+            }
+        }
 
         public void TriggerConversation(DialogueContainer dialogToTrigger)
         {
+            Debug.Log("Triggered Convo");
             var narrativeData = dialogToTrigger.NodeLinks.First(); //Entrypoint node
-            ProceedToNarrative(dialogToTrigger,narrativeData.TargetNodeGUID);
+
+
+
+            ProceedToNarrative(dialogues.Find(x=>x.dialogContainer == dialogToTrigger),narrativeData.TargetNodeGUID);
         }
 
-        private void ProceedToNarrative(DialogueContainer dialogue, string narrativeDataGUID)
+        private void ProceedToNarrative(DialogHolder dialogue, string narrativeDataGUID)
         {
-            var text = dialogue.DialogueNodeData.Find(x => x.NodeGUID == narrativeDataGUID).DialogueText;
+            dialogue.canvas.SetActive(true);
+            var text = dialogue.dialogContainer.DialogueNodeData.Find(x => x.NodeGUID == narrativeDataGUID).DialogueText;
 
             string[] dialogWords = text.Split(' ');
 
             if (dialogWords[dialogWords.Length - 1][0] == '_')
             {
                 //Give player the item corresponding to dialogWords[dialogWords.Length -1]
-
+                Inventory.instance.AddItem(dialogWords[dialogWords.Length - 1].Remove(0, 1));
                 string s = "";
 
                 for(int i=0; i < dialogWords.Length - 1; i++)
@@ -46,7 +69,7 @@ namespace Subtegral.DialogueSystem.Runtime
                 dialogue.dialogueText.text = ProcessProperties(dialogue, text);
 
             }
-            var choices = dialogue.NodeLinks.Where(x => x.BaseNodeGUID == narrativeDataGUID);
+            var choices = dialogue.dialogContainer.NodeLinks.Where(x => x.BaseNodeGUID == narrativeDataGUID);
            
             var buttons = dialogue.buttonContainer.GetComponentsInChildren<Button>();
             for (int i = 0; i < buttons.Length; i++)
@@ -95,20 +118,29 @@ namespace Subtegral.DialogueSystem.Runtime
             }
         }
 
-        IEnumerator DelayedConversation(DialogueContainer dialog, NodeLinkData node)
+        IEnumerator DelayedConversation(DialogHolder dialog, NodeLinkData node)
         {
             yield return new WaitForSeconds(2);
             ProceedToNarrative(dialog, node.TargetNodeGUID);
         }
 
-        private string ProcessProperties(DialogueContainer dialogue,  string text)
+        private string ProcessProperties(DialogHolder dialogue,  string text)
         {
            
-            foreach (var exposedProperty in dialogue.ExposedProperties)
+            foreach (var exposedProperty in dialogue.dialogContainer.ExposedProperties)
             {
                 text = text.Replace($"[{exposedProperty.PropertyName}]", exposedProperty.PropertyValue);
             }
             return text;
         }
+    }
+
+    [System.Serializable]
+    public class DialogHolder
+    {
+        public DialogueContainer dialogContainer;
+        public GameObject canvas;
+        [SerializeField] public Text dialogueText;
+        [SerializeField] public Transform buttonContainer;
     }
 }

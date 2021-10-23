@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
   m_Name: Trial2
   m_EditorClassIdentifier: 
-  timeToTrigger: 0
-  isAutomated: 0
+  timeToTrigger: 5
+  isAutomated: 1
   triggerOnObject: 
+  dialogueText: {fileID: 0}
+  buttonContainer: {fileID: 0}
   NodeLinks:
   - BaseNodeGUID: e4d4f253-b86d-4b87-b77e-e930c82615bf
     PortName: Next

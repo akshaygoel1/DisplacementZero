@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
   m_Name: Trial1
   m_EditorClassIdentifier: 
+  timeToTrigger: 2
+  isAutomated: 1
+  triggerOnObject: 
   NodeLinks:
   - BaseNodeGUID: cc2155b8-33bf-40d2-96d6-22e366b2ba8c
     PortName: Next
