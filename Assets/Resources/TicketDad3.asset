@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: TicketDad3
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: f225b238-730d-404a-aece-721c0715e901
+    PortName: Next
+    TargetNodeGUID: 44838b5a-c3e7-4711-8a97-eb3daaeaa51d
+  - BaseNodeGUID: 44838b5a-c3e7-4711-8a97-eb3daaeaa51d
+    PortName: Sir is this your son's ticket by any chance? by the bar counter?
+    TargetNodeGUID: 59607e26-7abd-49c6-9191-5964b53842ea
+  - BaseNodeGUID: c1d2e37d-0848-4a6b-b1c1-02d54333e8a7
+    PortName: kids are not meant to be controlled.
+    TargetNodeGUID: bc5d1284-c6a5-4912-ba7f-9c2f2b0b75d1
+  - BaseNodeGUID: 59607e26-7abd-49c6-9191-5964b53842ea
+    PortName: I was like that too once.
+    TargetNodeGUID: c1d2e37d-0848-4a6b-b1c1-02d54333e8a7
+  - BaseNodeGUID: 59607e26-7abd-49c6-9191-5964b53842ea
+    PortName: No problem.
+    TargetNodeGUID: bc5d1284-c6a5-4912-ba7f-9c2f2b0b75d1
+  - BaseNodeGUID: bc5d1284-c6a5-4912-ba7f-9c2f2b0b75d1
+    PortName: sure no problem, i will see what i can do.
+    TargetNodeGUID: 8a59c25c-b985-4809-9e28-cb037ed82359
+  DialogueNodeData:
+  - NodeGUID: 44838b5a-c3e7-4711-8a97-eb3daaeaa51d
+    DialogueText: Son where were you, i was worried looking for you.
+    Position: {x: 348, y: 212}
+  - NodeGUID: c1d2e37d-0848-4a6b-b1c1-02d54333e8a7
+    DialogueText: Kids... are ..hard to control these days.
+    Position: {x: 1568, y: 141}
+  - NodeGUID: 59607e26-7abd-49c6-9191-5964b53842ea
+    DialogueText: WHAT..MY SON?...BAR COUNTER?...Hmph, I'll deal with him later,
+      thankyou.
+    Position: {x: 943, y: 218}
+  - NodeGUID: 8a59c25c-b985-4809-9e28-cb037ed82359
+    DialogueText: Thankyou very much! You are a good guy.
+    Position: {x: 2520, y: 271}
+  - NodeGUID: bc5d1284-c6a5-4912-ba7f-9c2f2b0b75d1
+    DialogueText: could you help me out..? I forgot my bag in the first compartment.
+      Could you help me pick it up? As i am watching the kid.
+    Position: {x: 1614, y: 292}
+  ExposedProperties: []
+  CommentBlockData: []
