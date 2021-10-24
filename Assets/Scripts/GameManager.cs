@@ -37,7 +37,19 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(_ProcessShake());
 
-        if (PlayerPrefs.GetInt("diffuse",0) == 1)
+
+        if (PlayerPrefs.GetInt("crossedFirstLoop", 0) == 1)
+        {
+            CharacterController.instance.TriggerPlayerDialog("Wait? Was there an explosion? Why am I here again?");
+            PlayerPrefs.SetInt("crossedFirstLoop", 2);
+        }
+
+        if (PlayerPrefs.GetInt("crossedFirstLoop", 0) == 0)
+        {
+            PlayerPrefs.SetInt("crossedFirstLoop", 1);
+        }
+
+        if (PlayerPrefs.GetInt("diffuse", 0) == 1)
         {
             CharacterController.instance.TriggerPlayerDialog("Waaait? I thought it was over!");
             //change bg music
@@ -49,7 +61,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartTimer()
     {
- 
+
         if (!isTimerOn)
         {
             logo.SetActive(false);
@@ -79,7 +91,7 @@ public class GameManager : MonoBehaviour
             {
                 StartExplosion();
             }
-            else if(timerCounter <= 0 && PlayerPrefs.GetInt("diffuse", 0) == 1)
+            else if (timerCounter <= 0 && PlayerPrefs.GetInt("diffuse", 0) == 1)
             {
                 bgMusic.enabled = false;
                 StartCoroutine(Exp2());
@@ -110,7 +122,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-    private IEnumerator _ProcessShake(float shakeIntensity =3f, float shakeTiming = 0.5f)
+    private IEnumerator _ProcessShake(float shakeIntensity = 3f, float shakeTiming = 0.5f)
     {
         while (true)
         {
@@ -137,7 +149,7 @@ public class GameManager : MonoBehaviour
     IEnumerator Credit()
     {
         yield return new WaitForSeconds(3);
-        while (creditsScreen.alpha<=1)
+        while (creditsScreen.alpha <= 1)
         {
 
             yield return new WaitForSeconds(0.01f);
