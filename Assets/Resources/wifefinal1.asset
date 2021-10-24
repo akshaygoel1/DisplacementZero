@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: wifefinal1
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: 84eb3fc2-3149-41e6-b8bf-5730c4aa68e2
+    PortName: Next
+    TargetNodeGUID: 2854e779-7184-43e8-8414-1427b0e8f0ac
+  - BaseNodeGUID: 2854e779-7184-43e8-8414-1427b0e8f0ac
+    PortName: I..tried to save you.
+    TargetNodeGUID: cdd70711-cdb7-477c-a048-f9552e85bee5
+  - BaseNodeGUID: cdd70711-cdb7-477c-a048-f9552e85bee5
+    PortName: but...nothing worked.
+    TargetNodeGUID: 00b3327f-df1e-4f87-a6e2-393c12779119
+  - BaseNodeGUID: 00b3327f-df1e-4f87-a6e2-393c12779119
+    PortName: I can't figure out what i did wrong..
+    TargetNodeGUID: d2a9f489-4b46-4530-80bf-1eeb1078bb96
+  - BaseNodeGUID: d2a9f489-4b46-4530-80bf-1eeb1078bb96
+    PortName: Huh?
+    TargetNodeGUID: 371432cd-b871-4cb1-89ad-62b3c07a2646
+  - BaseNodeGUID: 371432cd-b871-4cb1-89ad-62b3c07a2646
+    PortName: I...
+    TargetNodeGUID: a0c32141-7350-4941-805a-5d0792032204
+  - BaseNodeGUID: a0c32141-7350-4941-805a-5d0792032204
+    PortName: I..can..explain
+    TargetNodeGUID: b6d2e5cd-d47f-44b4-99e5-465faafc3660
+  - BaseNodeGUID: b6d2e5cd-d47f-44b4-99e5-465faafc3660
+    PortName: '-'
+    TargetNodeGUID: c4bc58a4-96cd-4751-8588-a0e7ebabcede
+  - BaseNodeGUID: c4bc58a4-96cd-4751-8588-a0e7ebabcede
+    PortName: Maybe that's what I'm doing right now.
+    TargetNodeGUID: 2cf77290-b18c-4fee-833c-c11a01a5d3c6
+  - BaseNodeGUID: c4bc58a4-96cd-4751-8588-a0e7ebabcede
+    PortName: Is that why i'm here?
+    TargetNodeGUID: 0b8ef9bf-334c-4f79-830d-f5931be4ee2a
+  - BaseNodeGUID: 0b8ef9bf-334c-4f79-830d-f5931be4ee2a
+    PortName: '-'
+    TargetNodeGUID: ce257435-60fb-4fdb-b701-d9a86daed292
+  - BaseNodeGUID: 2cf77290-b18c-4fee-833c-c11a01a5d3c6
+    PortName: '-'
+    TargetNodeGUID: ce257435-60fb-4fdb-b701-d9a86daed292
+  - BaseNodeGUID: ce257435-60fb-4fdb-b701-d9a86daed292
+    PortName: '-'
+    TargetNodeGUID: e1d2faba-a1a6-4bdc-af22-7757f3e47f61
+  DialogueNodeData:
+  - NodeGUID: 2854e779-7184-43e8-8414-1427b0e8f0ac
+    DialogueText: Hey love, how are you doing?
+    Position: {x: 238, y: 189}
+  - NodeGUID: cdd70711-cdb7-477c-a048-f9552e85bee5
+    DialogueText: What do you mean?
+    Position: {x: 558, y: 192}
+  - NodeGUID: 00b3327f-df1e-4f87-a6e2-393c12779119
+    DialogueText: Is everything okay?
+    Position: {x: 858, y: 178}
+  - NodeGUID: d2a9f489-4b46-4530-80bf-1eeb1078bb96
+    DialogueText: Do you want me to tell you what you did wrong?
+    Position: {x: 1219, y: 174}
+  - NodeGUID: 371432cd-b871-4cb1-89ad-62b3c07a2646
+    DialogueText: Every Christmas, every Thanksgiving , every moment. Anytime that
+      we spent together, you prefered to be alone.
+    Position: {x: 1661, y: 173}
+  - NodeGUID: a0c32141-7350-4941-805a-5d0792032204
+    DialogueText: I thought this trip would be different, but you left me alone again.
+    Position: {x: 2488, y: 180}
+  - NodeGUID: b6d2e5cd-d47f-44b4-99e5-465faafc3660
+    DialogueText: And that's the difference between us.
+    Position: {x: 3051, y: 175}
+  - NodeGUID: c4bc58a4-96cd-4751-8588-a0e7ebabcede
+    DialogueText: If i had two minutes left to life,i would spend each moment with
+      you.
+    Position: {x: 3426, y: 171}
+  - NodeGUID: 2cf77290-b18c-4fee-833c-c11a01a5d3c6
+    DialogueText: Maybe that's what you should have done all along.
+    Position: {x: 3998, y: 101}
+  - NodeGUID: 0b8ef9bf-334c-4f79-830d-f5931be4ee2a
+    DialogueText: To be  with me.
+    Position: {x: 4004, y: 233}
+  - NodeGUID: ce257435-60fb-4fdb-b701-d9a86daed292
+    DialogueText: But it's not too late.
+    Position: {x: 4460, y: 182}
+  - NodeGUID: e1d2faba-a1a6-4bdc-af22-7757f3e47f61
+    DialogueText: Stay.
+    Position: {x: 4753, y: 181}
+  ExposedProperties: []
+  CommentBlockData:
+  - ChildNodes: []
+    Position: {x: 322.5, y: 15}
+    Title: Comment Block

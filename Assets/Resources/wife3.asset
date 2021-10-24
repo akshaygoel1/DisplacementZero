@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: wife3
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: ed2c2150-4f31-485b-8a40-61a9de5c758d
+    PortName: Next
+    TargetNodeGUID: e14d990b-09eb-49bc-a00b-e2051d54ca2e
+  - BaseNodeGUID: e14d990b-09eb-49bc-a00b-e2051d54ca2e
+    PortName: Huh?
+    TargetNodeGUID: ad2133aa-a87a-4a77-ad53-1f609383aee8
+  - BaseNodeGUID: e14d990b-09eb-49bc-a00b-e2051d54ca2e
+    PortName: I do.
+    TargetNodeGUID: 8e19c83b-c8cd-43f5-b386-8a1b89a3600a
+  - BaseNodeGUID: ad2133aa-a87a-4a77-ad53-1f609383aee8
+    PortName: ...
+    TargetNodeGUID: f9d004f2-f6fe-4492-914c-d2a0a457180b
+  - BaseNodeGUID: 8e19c83b-c8cd-43f5-b386-8a1b89a3600a
+    PortName: it was.
+    TargetNodeGUID: f9d004f2-f6fe-4492-914c-d2a0a457180b
+  - BaseNodeGUID: f9d004f2-f6fe-4492-914c-d2a0a457180b
+    PortName: '-'
+    TargetNodeGUID: e7d2a76a-321a-49fe-aea6-8aee43b0b37f
+  - BaseNodeGUID: e7d2a76a-321a-49fe-aea6-8aee43b0b37f
+    PortName: '-'
+    TargetNodeGUID: a2d35845-ede0-4473-84f8-042a7560597a
+  DialogueNodeData:
+  - NodeGUID: e14d990b-09eb-49bc-a00b-e2051d54ca2e
+    DialogueText: This bracelet.....you remembered!?
+    Position: {x: 199, y: 208}
+  - NodeGUID: ad2133aa-a87a-4a77-ad53-1f609383aee8
+    DialogueText: so i guess its just a mere coincedence, should have expected that.
+    Position: {x: 598, y: 126}
+  - NodeGUID: 8e19c83b-c8cd-43f5-b386-8a1b89a3600a
+    DialogueText: That moment...it was really precious to us right?
+    Position: {x: 686, y: 269}
+  - NodeGUID: f9d004f2-f6fe-4492-914c-d2a0a457180b
+    DialogueText: 'Several years, when we were younger, i remember we watched the
+      sunset together and you proposed to me. '
+    Position: {x: 1156, y: 205}
+  - NodeGUID: e7d2a76a-321a-49fe-aea6-8aee43b0b37f
+    DialogueText: It was one of the happiest days of my life, although you didn't
+      have a ring to give to me, so you gave me a bracelet like this one.
+    Position: {x: 1948, y: 206}
+  - NodeGUID: a2d35845-ede0-4473-84f8-042a7560597a
+    DialogueText: 'That moment was so special that i even remember the day, 7th of
+      October. '
+    Position: {x: 2914, y: 204}
+  ExposedProperties: []
+  CommentBlockData: []

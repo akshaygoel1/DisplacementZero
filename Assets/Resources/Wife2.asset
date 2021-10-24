@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Wife2
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: 04e1ca8c-3a5c-406d-8e08-b500893414c9
+    PortName: Next
+    TargetNodeGUID: 3be01ca1-b0ab-4a38-b59d-b5889255412f
+  - BaseNodeGUID: 3be01ca1-b0ab-4a38-b59d-b5889255412f
+    PortName: You're welcome
+    TargetNodeGUID: 267c8325-fcfe-4bad-99c6-b431f9def623
+  - BaseNodeGUID: 3be01ca1-b0ab-4a38-b59d-b5889255412f
+    PortName: I know your favourites
+    TargetNodeGUID: d0b456d7-a45a-468f-be69-c35f29c22ed2
+  - BaseNodeGUID: 267c8325-fcfe-4bad-99c6-b431f9def623
+    PortName: I hope you do.
+    TargetNodeGUID: c7c691c9-dd32-4a79-bbd5-8ebfdd7e3716
+  - BaseNodeGUID: d0b456d7-a45a-468f-be69-c35f29c22ed2
+    PortName: Sometimes, and that's okay.
+    TargetNodeGUID: c7c691c9-dd32-4a79-bbd5-8ebfdd7e3716
+  DialogueNodeData:
+  - NodeGUID: 3be01ca1-b0ab-4a38-b59d-b5889255412f
+    DialogueText: 'Oh you got that for me luv? Fiery fox! Cute! thankyou! '
+    Position: {x: 238, y: 189}
+  - NodeGUID: 267c8325-fcfe-4bad-99c6-b431f9def623
+    DialogueText: Thanks, I'll enjoy it.
+    Position: {x: 723, y: 172}
+  - NodeGUID: d0b456d7-a45a-468f-be69-c35f29c22ed2
+    DialogueText: You do remember them, sometimes. That's okay. Thankyou.
+    Position: {x: 716, y: 305}
+  - NodeGUID: c7c691c9-dd32-4a79-bbd5-8ebfdd7e3716
+    DialogueText: You know, It's been pretty chilly in here since a while. Didn't
+      expect winter weather inside.
+    Position: {x: 1278, y: 198}
+  ExposedProperties: []
+  CommentBlockData: []
