@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Sisterz1
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: 1496c74e-140c-4088-a280-2cf8a4181171
+    PortName: Next
+    TargetNodeGUID: fc3923d5-f252-4e77-81f4-972ba84d0ded
+  - BaseNodeGUID: fc3923d5-f252-4e77-81f4-972ba84d0ded
+    PortName: The views seem good.
+    TargetNodeGUID: cabe42ef-8e47-486b-8b38-30cf675f6166
+  - BaseNodeGUID: cabe42ef-8e47-486b-8b38-30cf675f6166
+    PortName: Now that's an exageration.
+    TargetNodeGUID: b0a4a5ea-02bf-4c77-8e52-4b18986ea3e9
+  - BaseNodeGUID: b0a4a5ea-02bf-4c77-8e52-4b18986ea3e9
+    PortName: You know i can hear you..
+    TargetNodeGUID: a924d954-bd8c-49ab-946a-aff2b92c8b53
+  DialogueNodeData:
+  - NodeGUID: fc3923d5-f252-4e77-81f4-972ba84d0ded
+    DialogueText: This journey seems long, but i am enjoying the views by your side
+      sis.
+    Position: {x: 233, y: 199}
+  - NodeGUID: cabe42ef-8e47-486b-8b38-30cf675f6166
+    DialogueText: Ah but my throat is parched! I haven't had a drink since the 80s!
+    Position: {x: 806, y: 198}
+  - NodeGUID: b0a4a5ea-02bf-4c77-8e52-4b18986ea3e9
+    DialogueText: If only someone could grab us a drink while we enjoy the view sis...
+    Position: {x: 1345, y: 202}
+  - NodeGUID: a924d954-bd8c-49ab-946a-aff2b92c8b53
+    DialogueText: if only....
+    Position: {x: 1892, y: 206}
+  ExposedProperties: []
+  CommentBlockData: []

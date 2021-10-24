@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Joe1
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: bcded8cd-84d3-441d-bfb5-d333ac07e9ee
+    PortName: I do, joe right?
+    TargetNodeGUID: cfdca7ce-cd89-4956-8b18-d43403fcb28f
+  - BaseNodeGUID: 1d28248a-8ed0-4b6c-acff-0da9325c5d7d
+    PortName: Next
+    TargetNodeGUID: bcded8cd-84d3-441d-bfb5-d333ac07e9ee
+  - BaseNodeGUID: cfdca7ce-cd89-4956-8b18-d43403fcb28f
+    PortName: ...
+    TargetNodeGUID: df0ac54f-ff9a-4976-8112-f421bda63c21
+  - BaseNodeGUID: df0ac54f-ff9a-4976-8112-f421bda63c21
+    PortName: Anyway, can i get the keys for boiler room
+    TargetNodeGUID: 4e431f5f-842a-4e28-8ae3-01082fbaa3c2
+  - BaseNodeGUID: 4e431f5f-842a-4e28-8ae3-01082fbaa3c2
+    PortName: Indeed, so can i get it? before i remember that you made that joke.
+    TargetNodeGUID: 9b545e06-72b4-4ab8-88db-8e516afb46db
+  DialogueNodeData:
+  - NodeGUID: bcded8cd-84d3-441d-bfb5-d333ac07e9ee
+    DialogueText: Hello sir, do you neigh any help?
+    Position: {x: 197, y: 201}
+  - NodeGUID: cfdca7ce-cd89-4956-8b18-d43403fcb28f
+    DialogueText: Joe mama
+    Position: {x: 529, y: 201}
+  - NodeGUID: df0ac54f-ff9a-4976-8112-f421bda63c21
+    DialogueText: ...
+    Position: {x: 744, y: 202}
+  - NodeGUID: 4e431f5f-842a-4e28-8ae3-01082fbaa3c2
+    DialogueText: You can! Did ya talk to Pek?
+    Position: {x: 1183, y: 198}
+  - NodeGUID: 9b545e06-72b4-4ab8-88db-8e516afb46db
+    DialogueText: Neigh Neigh Neigh, sure sure. Here ya go. _key
+    Position: {x: 1749, y: 197}
+  ExposedProperties: []
+  CommentBlockData: []

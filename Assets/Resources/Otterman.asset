@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Otterman
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: bf2ee501-e538-496d-bb61-f35a96eb73a8
+    PortName: Next
+    TargetNodeGUID: 3cadbfc9-4205-4653-be02-bf2b24dc8698
+  - BaseNodeGUID: 3cadbfc9-4205-4653-be02-bf2b24dc8698
+    PortName: '@Pek Pek Pek'
+    TargetNodeGUID: e70c33af-3dd7-4afb-bd4d-0be9029ed304
+  - BaseNodeGUID: 3cadbfc9-4205-4653-be02-bf2b24dc8698
+    PortName: I need to pass through.
+    TargetNodeGUID: 5ab718aa-f0c3-4dad-a601-db745aaf1e9b
+  - BaseNodeGUID: e70c33af-3dd7-4afb-bd4d-0be9029ed304
+    PortName: pek indeed
+    TargetNodeGUID: e8575f67-c8cd-4b35-8af0-98ad17245734
+  - BaseNodeGUID: e8575f67-c8cd-4b35-8af0-98ad17245734
+    PortName: What? Whose Joe?
+    TargetNodeGUID: 6daf0b06-5654-4a56-936c-2df6959084a5
+  DialogueNodeData:
+  - NodeGUID: 3cadbfc9-4205-4653-be02-bf2b24dc8698
+    DialogueText: Sorry pal, no loitering , no ottering.
+    Position: {x: 214, y: 199}
+  - NodeGUID: 5ab718aa-f0c3-4dad-a601-db745aaf1e9b
+    DialogueText: Can't do so. Frankie's orders. Rules are Rules, carved on wood.
+    Position: {x: 600, y: 155}
+  - NodeGUID: e70c33af-3dd7-4afb-bd4d-0be9029ed304
+    DialogueText: Pek Pek? Frankie sent you?
+    Position: {x: 603, y: 295}
+  - NodeGUID: e8575f67-c8cd-4b35-8af0-98ad17245734
+    DialogueText: Cool cool, wavy cool. Although i'll need the key to access it.
+      Might have to ask Joe moving around the train.
+    Position: {x: 923, y: 294}
+  - NodeGUID: 6daf0b06-5654-4a56-936c-2df6959084a5
+    DialogueText: ehehehe, you'll find him moving around the carts collecting tickets.
+    Position: {x: 1703, y: 288}
+  ExposedProperties: []
+  CommentBlockData: []
