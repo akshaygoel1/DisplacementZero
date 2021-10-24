@@ -3149,7 +3149,7 @@ PrefabInstance:
     - target: {fileID: 1385303840078306371, guid: ea5b478e63da40f47ab16ae1a8dd8288,
         type: 3}
       propertyPath: m_TagString
-      value: Lady2
+      value: Lady1
       objectReference: {fileID: 0}
     - target: {fileID: 1670263263099740421, guid: ea5b478e63da40f47ab16ae1a8dd8288,
         type: 3}
@@ -3304,12 +3304,17 @@ PrefabInstance:
     - target: {fileID: 6390763440767865922, guid: ea5b478e63da40f47ab16ae1a8dd8288,
         type: 3}
       propertyPath: m_Size.x
-      value: 11.35
+      value: 18.55
       objectReference: {fileID: 0}
     - target: {fileID: 6390763440767865922, guid: ea5b478e63da40f47ab16ae1a8dd8288,
         type: 3}
       propertyPath: m_Size.y
       value: 15.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6390763440767865922, guid: ea5b478e63da40f47ab16ae1a8dd8288,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6811240493458906726, guid: ea5b478e63da40f47ab16ae1a8dd8288,
         type: 3}
@@ -3462,6 +3467,7 @@ MonoBehaviour:
   eWife: {fileID: 1743433298}
   eDad: {fileID: 467101039}
   eBartender: {fileID: 1760742964}
+  eSisters: {fileID: 536778482}
 --- !u!4 &913203267
 Transform:
   m_ObjectHideFlags: 0
@@ -3770,7 +3776,7 @@ GameObject:
   - component: {fileID: 1046579471}
   m_Layer: 0
   m_Name: Lady2 (1)
-  m_TagString: Lady2
+  m_TagString: Lady1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3789,7 +3795,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3800,7 +3806,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.35, y: 15.58}
+  m_Size: {x: 18.55, y: 15.58}
   m_EdgeRadius: 0
 --- !u!212 &1046579472
 SpriteRenderer:
@@ -3864,7 +3870,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1805178357}
   - component: {fileID: 1051706662}
-  - component: {fileID: 1051706661}
   m_Layer: 0
   m_Name: Lady2
   m_TagString: Lady2
@@ -3872,33 +3877,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1051706661
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 6390763440767865922, guid: ea5b478e63da40f47ab16ae1a8dd8288,
-    type: 3}
-  m_PrefabInstance: {fileID: 1805178356}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051706660}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.25, y: 9.49}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 11.35, y: 15.58}
-  m_EdgeRadius: 0
 --- !u!212 &1051706662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6935,7 +6913,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: bd17741354f191b4fad3a56f8cfa6fa7,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: ea5b478e63da40f47ab16ae1a8dd8288, type: 3}
 --- !u!4 &1805178357
 Transform:

@@ -7,7 +7,11 @@ public enum Scenarios
     None = -1,
     WifeIntro = 0,
     BartenderIntro,
-    TicketDadIntro
+    TicketDadIntro,
+    BagDad,
+    SistersIntro,
+    WifeDrink,
+    SistersDrink
 }
 
 
@@ -15,7 +19,7 @@ public class TriggerManager : MonoBehaviour
 {
     public static TriggerManager instance = null;
     List<int> completedScenarios = new List<int>();
-    public GameObject eWife, eDad, eBartender;
+    public GameObject eWife, eDad, eBartender, eSisters;
     Scenarios currentScenario = Scenarios.None;
     GameObject currentEActive;
     public void TriggerIntroWife()
@@ -48,7 +52,48 @@ public class TriggerManager : MonoBehaviour
             currentEActive = eDad;
         }
     }
-    bool IsNewScenario(Scenarios scenario)
+
+    public void TriggerBagDad()
+    {
+        if (IsNewScenario(Scenarios.BagDad))
+        {
+            eDad.SetActive(true);
+            currentScenario = Scenarios.BagDad;
+            currentEActive = eDad;
+        }
+    }
+
+    public void TriggerIntroSisters()
+    {
+        if (IsNewScenario(Scenarios.SistersIntro))
+        {
+            eSisters.SetActive(true);
+            currentScenario = Scenarios.SistersIntro;
+            currentEActive = eSisters;
+        }
+    }
+
+    public void TriggerDrinkWife()
+    {
+        if (IsNewScenario(Scenarios.WifeDrink))
+        {
+            eWife.SetActive(true);
+            currentScenario = Scenarios.WifeDrink;
+            currentEActive = eWife;
+        }
+    }
+
+    public void TriggerDrinkSisters()
+    {
+        if (IsNewScenario(Scenarios.SistersDrink))
+        {
+            eSisters.SetActive(true);
+            currentScenario = Scenarios.SistersDrink;
+            currentEActive = eSisters;
+        }
+    }
+
+    public bool IsNewScenario(Scenarios scenario)
     {
         if(completedScenarios.Exists(x=>x == (int)scenario))
         {
@@ -95,6 +140,33 @@ public class TriggerManager : MonoBehaviour
                 DialogueParser.instance.TriggerConversation(2);
                 completedScenarios.Add((int)Scenarios.TicketDadIntro);
                 Inventory.instance.RemoveItem(Item.Ticket);
+
+            }
+            if (currentScenario == Scenarios.BagDad)
+            {
+                DialogueParser.instance.TriggerConversation(3);
+                completedScenarios.Add((int)Scenarios.BagDad);
+                Inventory.instance.RemoveItem(Item.Bag);
+
+            }
+            if (currentScenario == Scenarios.SistersIntro)
+            {
+                DialogueParser.instance.TriggerConversation(4);
+                completedScenarios.Add((int)Scenarios.SistersIntro);
+
+            }
+            if (currentScenario == Scenarios.WifeDrink)
+            {
+                DialogueParser.instance.TriggerConversation(3);
+                completedScenarios.Add((int)Scenarios.WifeDrink);
+                Inventory.instance.RemoveItem(Item.Drink2);
+
+            }
+            if (currentScenario == Scenarios.SistersDrink)
+            {
+                DialogueParser.instance.TriggerConversation(5);
+                completedScenarios.Add((int)Scenarios.SistersDrink);
+                Inventory.instance.RemoveItem(Item.Drink1);
 
             }
         }

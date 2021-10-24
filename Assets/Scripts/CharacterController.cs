@@ -56,7 +56,14 @@ public class CharacterController : MonoBehaviour
 
         else if(collision.gameObject.tag == "Wife")
         {
-            TriggerManager.instance.TriggerIntroWife();
+            if (TriggerManager.instance.IsNewScenario(Scenarios.WifeIntro))
+            {
+                TriggerManager.instance.TriggerIntroWife();
+            }
+            else if (Inventory.instance.InventoryContains(Item.Drink2))
+            {
+                TriggerManager.instance.TriggerDrinkWife();
+            }
         }
         else if (collision.gameObject.tag == "Bartender")
         {
@@ -67,6 +74,21 @@ public class CharacterController : MonoBehaviour
             if (Inventory.instance.InventoryContains(Item.Ticket))
             {
                 TriggerManager.instance.TriggerIntroDad();
+            }
+            else if (Inventory.instance.InventoryContains(Item.Bag))
+            {
+                TriggerManager.instance.TriggerBagDad();
+            }
+        }
+        else if(collision.gameObject.tag == "Lady1")
+        {
+            if (TriggerManager.instance.IsNewScenario(Scenarios.SistersIntro)) {
+                TriggerManager.instance.TriggerIntroSisters();
+            }
+
+            else if (Inventory.instance.InventoryContains(Item.Drink1))
+            {
+                TriggerManager.instance.TriggerDrinkSisters();
             }
         }
     }
