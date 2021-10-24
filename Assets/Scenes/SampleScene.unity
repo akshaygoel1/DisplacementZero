@@ -2283,7 +2283,7 @@ PrefabInstance:
     - target: {fileID: 2172308964175992220, guid: ea5b478e63da40f47ab16ae1a8dd8288,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.43
+      value: 54.26
       objectReference: {fileID: 0}
     - target: {fileID: 2172308964175992220, guid: ea5b478e63da40f47ab16ae1a8dd8288,
         type: 3}
@@ -3952,6 +3952,30 @@ MonoBehaviour:
     itemPrefab: {fileID: 4025763676707000927, guid: 2de813329d4b43a468d532bf7820f3c5,
       type: 3}
     itemName: ticket
+  - item: 1
+    itemPrefab: {fileID: 4025763676707000927, guid: 7d74812739776b44895d3ac4a3bbd8a5,
+      type: 3}
+    itemName: screwdriver
+  - item: 3
+    itemPrefab: {fileID: 4025763676707000927, guid: c2b50c25f43f46b4e8e21bb7c375a9b5,
+      type: 3}
+    itemName: bag
+  - item: 8
+    itemPrefab: {fileID: 4025763676707000927, guid: 27dd60eb1f1e96041936f2e3c5cab0d7,
+      type: 3}
+    itemName: key
+  - item: 4
+    itemPrefab: {fileID: 4025763676707000927, guid: f2bea18e802111e459d67f161a1045fe,
+      type: 3}
+    itemName: wallet
+  - item: 5
+    itemPrefab: {fileID: 4025763676707000927, guid: 85a26cd477e4ac74aae10178def88783,
+      type: 3}
+    itemName: wirecutters
+  - item: 6
+    itemPrefab: {fileID: 4025763676707000927, guid: fc8c6be96333a1a4bb21eb50136cf3b3,
+      type: 3}
+    itemName: drink1
   slot1: {fileID: 1975453205}
   slot2: {fileID: 1467120218}
   slot3: {fileID: 2062797096}
@@ -4501,7 +4525,7 @@ PrefabInstance:
     - target: {fileID: 2172308964175992220, guid: ea5b478e63da40f47ab16ae1a8dd8288,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.85
+      value: 55.9
       objectReference: {fileID: 0}
     - target: {fileID: 2172308964175992220, guid: ea5b478e63da40f47ab16ae1a8dd8288,
         type: 3}

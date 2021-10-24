@@ -12,6 +12,12 @@ TagManager:
   - Ticket
   - Lady1
   - Lady2
+  - Key
+  - Bag
+  - Screwdriver
+  - Wirecutters
+  - Drink1
+  - Wallet
   layers:
   - Default
   - TransparentFX

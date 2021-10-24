@@ -143,7 +143,13 @@ public enum Item
 {
     None,
     Screwdriver,
-    Ticket
+    Ticket,
+    Bag,
+    Wallet,
+    WireCutters,
+    Drink1,
+    Drink2,
+    Key
 }
 [System.Serializable]
 public class SpriteLibrary
