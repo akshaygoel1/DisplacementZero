@@ -26,17 +26,17 @@ MonoBehaviour:
     PortName: I went out for a smoke.
     TargetNodeGUID: fa54f734-33bc-4cb2-830b-8f944cfd5b94
   - BaseNodeGUID: 30d7caa0-debc-4887-aa98-942ea733ae7e
-    PortName: ' -'
+    PortName: '-'
     TargetNodeGUID: ebab5e1c-ec15-4005-857d-d8357a248b6a
-  - BaseNodeGUID: fa54f734-33bc-4cb2-830b-8f944cfd5b94
-    PortName: ...
-    TargetNodeGUID: b9dccf5a-0a8a-4409-8a22-862a231a5906
   - BaseNodeGUID: ebab5e1c-ec15-4005-857d-d8357a248b6a
     PortName: ...
     TargetNodeGUID: b9dccf5a-0a8a-4409-8a22-862a231a5906
   - BaseNodeGUID: b9dccf5a-0a8a-4409-8a22-862a231a5906
     PortName: '-'
     TargetNodeGUID: d79feef5-4407-4477-bee6-b2f646ab5986
+  - BaseNodeGUID: fa54f734-33bc-4cb2-830b-8f944cfd5b94
+    PortName: ...
+    TargetNodeGUID: b9dccf5a-0a8a-4409-8a22-862a231a5906
   - BaseNodeGUID: d79feef5-4407-4477-bee6-b2f646ab5986
     PortName: maybe we should have left early then.
     TargetNodeGUID: 99177736-2089-4150-a4c3-894169ce1a1e

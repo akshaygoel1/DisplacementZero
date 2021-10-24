@@ -74,7 +74,21 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(Item itemType)
     {
         itemsInSlot.Remove(itemType);
-
+        if (slot1.transform.childCount != 0)
+        {
+            if(slot1.transform.GetChild(0).tag == itemType.ToString())
+            {
+                Destroy(slot1.transform.GetChild(0).gameObject);
+            }
+            else if (slot2.transform.GetChild(0).tag == itemType.ToString())
+            {
+                Destroy(slot2.transform.GetChild(0).gameObject);
+            }
+            else if (slot3.transform.GetChild(0).tag == itemType.ToString())
+            {
+                Destroy(slot3.transform.GetChild(0).gameObject);
+            }
+        }
         count--;
         RefreshSlots();
     }

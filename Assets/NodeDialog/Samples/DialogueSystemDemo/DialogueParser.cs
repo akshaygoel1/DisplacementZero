@@ -71,25 +71,34 @@ namespace Subtegral.DialogueSystem.Runtime
         {
             dialogue.canvas.SetActive(true);
             var text = dialogue.dialogContainer.DialogueNodeData.Find(x => x.NodeGUID == narrativeDataGUID).DialogueText;
+            char[] chars = text.ToCharArray();
 
-            string[] dialogWords = text.Split(' ');
-
-            if (dialogWords[dialogWords.Length - 1][0] == '_')
+            if (chars.Contains(' '))
             {
-                //Give player the item corresponding to dialogWords[dialogWords.Length -1]
-                Inventory.instance.AddItem(dialogWords[dialogWords.Length - 1].Remove(0, 1));
-                string s = "";
 
-                for(int i=0; i < dialogWords.Length - 1; i++)
+                string[] dialogWords = text.Split(' ');
+
+                if (dialogWords[dialogWords.Length - 1][0] == '_')
                 {
-                    s += dialogWords[i] + " ";
+                    //Give player the item corresponding to dialogWords[dialogWords.Length -1]
+                    Inventory.instance.AddItem(dialogWords[dialogWords.Length - 1].Remove(0, 1));
+                    string s = "";
+
+                    for (int i = 0; i < dialogWords.Length - 1; i++)
+                    {
+                        s += dialogWords[i] + " ";
+                    }
+                    dialogue.dialogueText.text = ProcessProperties(dialogue, s);
                 }
-                dialogue.dialogueText.text = ProcessProperties(dialogue, s);
+                else
+                {
+                    dialogue.dialogueText.text = ProcessProperties(dialogue, text);
+
+                }
             }
             else
             {
                 dialogue.dialogueText.text = ProcessProperties(dialogue, text);
-
             }
             var choices = dialogue.dialogContainer.NodeLinks.Where(x => x.BaseNodeGUID == narrativeDataGUID);
            
@@ -119,21 +128,32 @@ namespace Subtegral.DialogueSystem.Runtime
             }
             foreach (var choice in choices)
             {
-                string[] words = choice.PortName.Split(' ');
-                if (words.Length>0 && words[0][0] == '@')
+                char[] charsChoice = choice.PortName.ToCharArray();
+
+                if (charsChoice.Contains(' '))
                 {
-                    words[0]= words[0].Remove(0,1);
-                    if (triggersObtained.Exists(x => x == words[0]))
+                    string[] words = choice.PortName.Split(' ');
+                    if (words.Length > 0 && words[0][0] == '@')
+                    {
+                        words[0] = words[0].Remove(0, 1);
+                        if (triggersObtained.Exists(x => x == words[0]))
+                        {
+                            var button = Instantiate(choicePrefab, dialogue.buttonContainer);
+
+                            string s = "";
+                            for (int i = 1; i < words.Length; i++)
+                            {
+                                s += words[i] + " ";
+                            }
+
+                            button.GetComponentInChildren<Text>().text = ProcessProperties(dialogue, s);
+                            button.onClick.AddListener(() => ProceedToNarrative(dialogue, choice.TargetNodeGUID));
+                        }
+                    }
+                    else
                     {
                         var button = Instantiate(choicePrefab, dialogue.buttonContainer);
-
-                        string s = "";
-                        for(int i= 1; i < words.Length; i++)
-                        {
-                            s += words[i] + " ";
-                        }
-
-                        button.GetComponentInChildren<Text>().text = ProcessProperties(dialogue, s);
+                        button.GetComponentInChildren<Text>().text = ProcessProperties(dialogue, choice.PortName);
                         button.onClick.AddListener(() => ProceedToNarrative(dialogue, choice.TargetNodeGUID));
                     }
                 }
@@ -141,7 +161,7 @@ namespace Subtegral.DialogueSystem.Runtime
                 {
                     var button = Instantiate(choicePrefab, dialogue.buttonContainer);
                     button.GetComponentInChildren<Text>().text = ProcessProperties(dialogue, choice.PortName);
-                    button.onClick.AddListener(() => ProceedToNarrative(dialogue,choice.TargetNodeGUID));
+                    button.onClick.AddListener(() => ProceedToNarrative(dialogue, choice.TargetNodeGUID));
                 }
             }
         }
