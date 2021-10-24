@@ -11,7 +11,9 @@ public enum Scenarios
     BagDad,
     SistersIntro,
     WifeDrink,
-    SistersDrink
+    SistersDrink,
+    CeoWallet,
+    ConductorKey
 }
 
 
@@ -19,7 +21,7 @@ public class TriggerManager : MonoBehaviour
 {
     public static TriggerManager instance = null;
     List<int> completedScenarios = new List<int>();
-    public GameObject eWife, eDad, eBartender, eSisters;
+    public GameObject eWife, eDad, eBartender, eSisters, eCeo, eConductor;
     Scenarios currentScenario = Scenarios.None;
     GameObject currentEActive;
     public void TriggerIntroWife()
@@ -93,6 +95,25 @@ public class TriggerManager : MonoBehaviour
         }
     }
 
+    public void TriggerCeoWallet()
+    {
+        if (IsNewScenario(Scenarios.CeoWallet))
+        {
+            eCeo.SetActive(true);
+            currentScenario = Scenarios.CeoWallet;
+            currentEActive = eCeo;
+        }
+    }
+    public void TriggerConductorKey()
+    {
+        if (IsNewScenario(Scenarios.ConductorKey))
+        {
+            eConductor.SetActive(true);
+            currentScenario = Scenarios.ConductorKey;
+            currentEActive = eConductor;
+        }
+    }
+
     public bool IsNewScenario(Scenarios scenario)
     {
         if(completedScenarios.Exists(x=>x == (int)scenario))
@@ -107,6 +128,7 @@ public class TriggerManager : MonoBehaviour
         eWife.SetActive(false);
         eDad.SetActive(false);
         eBartender.SetActive(false);
+        eSisters.SetActive(false);
         currentScenario = Scenarios.None;
     }
 
@@ -169,6 +191,21 @@ public class TriggerManager : MonoBehaviour
                 Inventory.instance.RemoveItem(Item.Drink1);
 
             }
+            if (currentScenario == Scenarios.CeoWallet)
+            {
+                DialogueParser.instance.TriggerConversation(6);
+                completedScenarios.Add((int)Scenarios.CeoWallet);
+                Inventory.instance.RemoveItem(Item.Wallet);
+                DialogueParser.instance.AddTriggerObtained("metceo");
+
+            }
+            if (currentScenario == Scenarios.ConductorKey)
+            {
+                DialogueParser.instance.TriggerConversation(7);
+                completedScenarios.Add((int)Scenarios.ConductorKey);
+
+            }
+
         }
     }
 }

@@ -91,7 +91,7 @@ public class Inventory : MonoBehaviour
             }
         }
         count--;
-        RefreshSlots();
+        StartCoroutine(RefreshSlots());
     }
 
 
@@ -104,35 +104,41 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    void RefreshSlots()
+    IEnumerator RefreshSlots()
     {
+        yield return new WaitForEndOfFrame();
         if (count != 0)
         {
             if(slot1.transform.childCount == 0)
             {
-                if (slot3.transform.childCount == 1)
+                if (slot3.transform.childCount >= 1)
                 {
-                    if(slot2.transform.childCount == 0)
-                    {
-                        GameObject g = slot3.transform.GetChild(0).gameObject;
-                        g.transform.SetParent(slot2.transform);
-                        g.transform.position = Vector3.zero;
-                    }
-                    else
-                    {
+                   
                         GameObject g = slot3.transform.GetChild(0).gameObject;
                         g.transform.SetParent(slot1.transform);
-                        g.transform.position = Vector3.zero;
-                    }
+                        g.transform.localPosition = Vector3.zero;
+
                    
                 }
-                if (slot2.transform.childCount == 1)
+                else if (slot2.transform.childCount >= 1)
                 {
                      GameObject g = slot2.transform.GetChild(0).gameObject;
                     g.transform.SetParent(slot1.transform);
-                        g.transform.position = Vector3.zero;
+                        g.transform.localPosition = Vector3.zero;
                 }
-               
+            }
+            else if (slot2.transform.childCount == 0)
+            {
+                if (slot3.transform.childCount >= 1)
+                {
+
+                    GameObject g = slot3.transform.GetChild(0).gameObject;
+                    g.transform.SetParent(slot2.transform);
+                    g.transform.localPosition = Vector3.zero;
+
+
+                }
+                
             }
         }
     }

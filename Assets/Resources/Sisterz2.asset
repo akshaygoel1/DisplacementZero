@@ -26,11 +26,11 @@ MonoBehaviour:
     PortName: You're welcome. Have a great trip.
     TargetNodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
   - BaseNodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
-    PortName: _Wirecutters
-    TargetNodeGUID: 12e1fbb7-7bf1-4cfc-999c-62240c0491b5
-  - BaseNodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
-    PortName: '_Bracelet '
+    PortName: Wirecutters
     TargetNodeGUID: b1740efb-3f19-45f7-af27-b01911b80986
+  - BaseNodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
+    PortName: 'Bracelets '
+    TargetNodeGUID: 12e1fbb7-7bf1-4cfc-999c-62240c0491b5
   DialogueNodeData:
   - NodeGUID: 2a5fd02b-d707-4ac0-bd8f-fa951e8f0300
     DialogueText: Oh my god, a Mellowbery pina cola! For me?
@@ -39,16 +39,16 @@ MonoBehaviour:
     DialogueText: Thankyou very much! This is exactly what i wanted, with this view
       :')
     Position: {x: 675, y: 199}
-  - NodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
-    DialogueText: Wait a minute! before you go, i'd want you to have this.
-    Position: {x: 1249, y: 198}
   - NodeGUID: b1740efb-3f19-45f7-af27-b01911b80986
     DialogueText: This will help you connect with the people you hold dear. Keep
-      them close.
+      them close. _Wirecutter
     Position: {x: 1768, y: 163}
   - NodeGUID: 12e1fbb7-7bf1-4cfc-999c-62240c0491b5
     DialogueText: This will help to sever ties with objects that might break or change
-      you or  keep you stuck in a loop.
+      you or  keep you stuck in a loop. _Bracelet
     Position: {x: 1769, y: 267}
+  - NodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
+    DialogueText: Wait a minute! before you go, i'd want you to have this.
+    Position: {x: 1217, y: 195}
   ExposedProperties: []
   CommentBlockData: []

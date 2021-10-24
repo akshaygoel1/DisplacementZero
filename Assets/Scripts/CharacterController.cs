@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Subtegral.DialogueSystem.Runtime;
 public class CharacterController : MonoBehaviour
 {
     public float speed = 5f;
@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
     public GameObject player;
     float currentSpeed = 0f;
     public Animator anim;
+    public GameObject lockGO;
     // Update is called once per frame
     void Update()
     {
@@ -91,6 +92,28 @@ public class CharacterController : MonoBehaviour
                 TriggerManager.instance.TriggerDrinkSisters();
             }
         }
+        else if (collision.gameObject.tag == "Ceo")
+        {
+            if (Inventory.instance.InventoryContains(Item.Wallet))
+            {
+                TriggerManager.instance.TriggerCeoWallet();
+            }
+        }
+        else if (collision.gameObject.tag == "Conductor")
+        {
+            if (DialogueParser.instance.TriggerExists("metceo"))
+            {
+                TriggerManager.instance.TriggerCeoWallet();
+            }
+        }
+        else if (collision.gameObject.tag == "Lock")
+        {
+            if (Inventory.instance.InventoryContains(Item.Key))
+            {
+                Inventory.instance.RemoveItem(Item.Key);
+                lockGO.SetActive(false);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -107,5 +130,17 @@ public class CharacterController : MonoBehaviour
         {
                 TriggerManager.instance.DisableE();
         }
+        else if (collision.gameObject.tag == "Lady1")
+        {
+            TriggerManager.instance.DisableE();
+        }
+        else if (collision.gameObject.tag == "Ceo")
+        {
+            TriggerManager.instance.DisableE();
+        }
+        //else if (collision.gameObject.tag == "Conductor")
+        //{
+        //    TriggerManager.instance.DisableE();
+        //}
     }
 }

@@ -21,6 +21,9 @@ TagManager:
   - Jacket
   - Drink2
   - Bracelet
+  - Conductor
+  - Ceo
+  - Lock
   layers:
   - Default
   - TransparentFX

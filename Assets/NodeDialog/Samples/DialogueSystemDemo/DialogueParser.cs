@@ -20,6 +20,14 @@ namespace Subtegral.DialogueSystem.Runtime
         int secondsPassed = 0;
 
 
+        public void AddTriggerObtained(string s)
+        {
+            triggersObtained.Add(s);
+        }
+        public bool TriggerExists(string s)
+        {
+            return triggersObtained.Exists(x => x == s);
+        }
         private void Awake()
         {
             if (instance == null)
@@ -30,6 +38,10 @@ namespace Subtegral.DialogueSystem.Runtime
 
         private void Start()
         {
+            if(PlayerPrefs.GetInt("metceo",0) == 1)
+            {
+                AddTriggerObtained("metceo");
+            }
             StartCoroutine(AutomatedDialog());
         }
 
