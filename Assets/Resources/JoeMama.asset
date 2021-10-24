@@ -19,12 +19,12 @@ MonoBehaviour:
   - BaseNodeGUID: 8799895a-3fd6-46b3-b320-ada7798e8892
     PortName: Next
     TargetNodeGUID: 0f91dfb5-ef79-4396-8730-3a8e7eee9f47
-  - BaseNodeGUID: 6267a668-c1fd-4d45-b867-e2b239a678ce
-    PortName: ...
-    TargetNodeGUID: 21616a16-d568-4a7f-ba8e-91d227d19e61
   - BaseNodeGUID: 0f91dfb5-ef79-4396-8730-3a8e7eee9f47
     PortName: I do actually, Joe right?
     TargetNodeGUID: 6267a668-c1fd-4d45-b867-e2b239a678ce
+  - BaseNodeGUID: 6267a668-c1fd-4d45-b867-e2b239a678ce
+    PortName: ...
+    TargetNodeGUID: 21616a16-d568-4a7f-ba8e-91d227d19e61
   - BaseNodeGUID: 21616a16-d568-4a7f-ba8e-91d227d19e61
     PortName: ...
     TargetNodeGUID: 039c4e14-5410-47c8-9cbf-079811456ac9
@@ -51,13 +51,13 @@ MonoBehaviour:
     DialogueText: Nevermind, What help did you need sir?
     Position: {x: 1182, y: 192}
   - NodeGUID: e7054c16-94c8-4904-9ea0-bfacc9686f96
-    DialogueText: 'You''re not allowed inside sir. '
+    DialogueText: You're not allowed inside sir.
     Position: {x: 1628, y: 191}
   - NodeGUID: 92982b8c-0e8b-4a2b-9c7a-50c2b3d6f5bc
     DialogueText: Oh? ohkay! if pek said yes then neigh worries! Here ya go!
     Position: {x: 1946, y: 192}
   - NodeGUID: b6d3cb91-89e2-41a7-8c4b-15aa1d93838f
-    DialogueText: JOE MAMA
+    DialogueText: JOE MAMA _key
     Position: {x: 2438, y: 192}
   ExposedProperties: []
   CommentBlockData: []

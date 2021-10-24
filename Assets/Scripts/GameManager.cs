@@ -14,6 +14,12 @@ public class GameManager : MonoBehaviour
     public GameObject explosion;
     public GameObject whiteScreen;
     public AudioSource bgMusic;
+
+    public GameObject logo;
+    public List<GameObject> hud = new List<GameObject>();
+    public GameObject blocker;
+    public CanvasGroup creditsScreen;
+    public AudioSource normal, end;
     private void Awake()
     {
         if (instance == null)
@@ -22,20 +28,37 @@ public class GameManager : MonoBehaviour
             Destroy(this);
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     private void Start()
     {
         StartCoroutine(_ProcessShake());
+
+        if (PlayerPrefs.GetInt("diffuse",0) == 1)
+        {
+            CharacterController.instance.TriggerPlayerDialog("Waaait? I thought it was over!");
+            //change bg music
+            normal.enabled = false;
+            end.enabled = true;
+            blocker.SetActive(true);
+        }
+
     }
     public void StartTimer()
     {
  
         if (!isTimerOn)
         {
+            logo.SetActive(false);
+            foreach (GameObject g in hud)
+                g.SetActive(true);
             StartCoroutine(Timeeee());
             isTimerOn = true;
         }
     }
-
 
     IEnumerator Timeeee()
     {
@@ -46,9 +69,20 @@ public class GameManager : MonoBehaviour
             string s = "0" + (Mathf.FloorToInt(timerCounter / 60)).ToString() + ":" + (timerCounter % 60).ToString();
             timer.text = s;
 
-            if (timerCounter <= 0)
+
+            if (timerCounter == 8)
+            {
+                SoundManager.instance.PlaySound("explosion");
+            }
+
+            if (timerCounter <= 0 && PlayerPrefs.GetInt("diffuse", 0) == 0)
             {
                 StartExplosion();
+            }
+            else if(timerCounter <= 0 && PlayerPrefs.GetInt("diffuse", 0) == 1)
+            {
+                bgMusic.enabled = false;
+                StartCoroutine(Exp2());
             }
         }
     }
@@ -64,6 +98,13 @@ public class GameManager : MonoBehaviour
         explosion.gameObject.SetActive(true);
         //trigger sound
         yield return new WaitForSeconds(2);
+        whiteScreen.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    IEnumerator Exp2()
+    {
         whiteScreen.SetActive(true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("SampleScene");
@@ -88,4 +129,21 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void End()
+    {
+        StartCoroutine(Credit());
+    }
+
+    IEnumerator Credit()
+    {
+        yield return new WaitForSeconds(3);
+        while (creditsScreen.alpha<=1)
+        {
+
+            yield return new WaitForSeconds(0.01f);
+            creditsScreen.alpha += 0.1f;
+            creditsScreen.blocksRaycasts = true;
+            creditsScreen.interactable = true;
+        }
+    }
 }

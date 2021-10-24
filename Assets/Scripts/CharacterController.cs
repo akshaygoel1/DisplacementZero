@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Subtegral.DialogueSystem.Runtime;
+using UnityEngine.UI;
+
 public class CharacterController : MonoBehaviour
 {
     public float speed = 5f;
@@ -9,7 +11,24 @@ public class CharacterController : MonoBehaviour
     public GameObject player;
     float currentSpeed = 0f;
     public Animator anim;
-    public GameObject lockGO;
+    public GameObject lockGO, coverGO, bombE;
+    public Sprite wireCut;
+    public SpriteRenderer bomb;
+    public GameObject textInput;
+    public InputField input;
+    int bombStep = 0;
+    public GameObject playerDialogCanvas;
+    public Text dialogText;
+    public static CharacterController instance = null;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -45,8 +64,31 @@ public class CharacterController : MonoBehaviour
         {
             anim.SetFloat("speed", 0);
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (bombE.activeInHierarchy)
+            {
+                DisarmBomb();
+            }
+        }
     }
 
+
+    public void TriggerPlayerDialog(string s)
+    {
+        playerDialogCanvas.SetActive(true);
+        dialogText.text = s;
+        StartCoroutine(DisableDialogBox());
+    }
+
+
+    IEnumerator DisableDialogBox()
+    {
+        yield return new WaitForSeconds(3);
+        playerDialogCanvas.SetActive(false);
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -57,13 +99,21 @@ public class CharacterController : MonoBehaviour
 
         else if(collision.gameObject.tag == "Wife")
         {
-            if (TriggerManager.instance.IsNewScenario(Scenarios.WifeIntro))
+            if (PlayerPrefs.GetInt("diffuse", 0) == 1)
+            {
+                TriggerManager.instance.TriggerWifeEnd();
+            }
+            else if (TriggerManager.instance.IsNewScenario(Scenarios.WifeIntro))
             {
                 TriggerManager.instance.TriggerIntroWife();
             }
             else if (Inventory.instance.InventoryContains(Item.Drink2))
             {
                 TriggerManager.instance.TriggerDrinkWife();
+            }
+            else if (Inventory.instance.InventoryContains(Item.Bracelet))
+            {
+                TriggerManager.instance.TriggerWifeBracelet();
             }
         }
         else if (collision.gameObject.tag == "Bartender")
@@ -101,9 +151,10 @@ public class CharacterController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Conductor")
         {
+            Debug.Log("Collided with conductor");
             if (DialogueParser.instance.TriggerExists("metceo"))
             {
-                TriggerManager.instance.TriggerCeoWallet();
+                TriggerManager.instance.TriggerConductorKey();
             }
         }
         else if (collision.gameObject.tag == "Lock")
@@ -114,6 +165,13 @@ public class CharacterController : MonoBehaviour
                 lockGO.SetActive(false);
             }
         }
+        else if (collision.gameObject.tag == "Bomb")
+        {
+
+                bombE.SetActive(true);
+
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -138,9 +196,57 @@ public class CharacterController : MonoBehaviour
         {
             TriggerManager.instance.DisableE();
         }
+        else if (collision.gameObject.tag == "Bomb")
+        {
+            bombE.SetActive(false);
+        }
         //else if (collision.gameObject.tag == "Conductor")
         //{
         //    TriggerManager.instance.DisableE();
         //}
+    }
+
+    void DisarmBomb()
+    {
+        if(bombStep == 0)
+        {
+            if (Inventory.instance.InventoryContains(Item.Screwdriver))
+            {
+                coverGO.SetActive(false);
+                bombStep++;
+                Inventory.instance.RemoveItem(Item.Screwdriver);
+            }
+        }
+        if(bombStep == 1)
+        {
+            if (Inventory.instance.InventoryContains(Item.WireCutters))
+            {
+                bomb.sprite = wireCut;
+                bombStep++;
+                Inventory.instance.RemoveItem(Item.WireCutters);
+
+            }
+        }
+        if(bombStep == 2)
+        {
+            textInput.SetActive(true);
+            bombStep++;
+            bombE.SetActive(false);
+        }
+    }
+
+    public void CheckCode()
+    {
+        if (input.text.Equals("0710"))
+        {
+            textInput.SetActive(false);
+            bomb.gameObject.SetActive(false);
+            TriggerPlayerDialog("Yay! I diffused the bomb!");
+            PlayerPrefs.SetInt("diffuse", 1);
+        }
+        else
+        {
+            input.text = "";
+        }
     }
 }

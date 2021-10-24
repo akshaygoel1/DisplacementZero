@@ -26,7 +26,7 @@ namespace Subtegral.DialogueSystem.Runtime
         }
         public bool TriggerExists(string s)
         {
-            return triggersObtained.Exists(x => x == s);
+            return triggersObtained.Exists(x => string.Equals( x, s));
         }
         private void Awake()
         {
@@ -105,12 +105,16 @@ namespace Subtegral.DialogueSystem.Runtime
                 else
                 {
                     dialogue.dialogueText.text = ProcessProperties(dialogue, text);
-
+                
                 }
             }
             else
             {
                 dialogue.dialogueText.text = ProcessProperties(dialogue, text);
+                if (string.Equals(dialogue.dialogueText.text, "Stay."))
+                {
+                    GameManager.instance.End();
+                }
             }
             var choices = dialogue.dialogContainer.NodeLinks.Where(x => x.BaseNodeGUID == narrativeDataGUID);
            

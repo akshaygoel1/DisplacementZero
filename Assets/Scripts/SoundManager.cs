@@ -8,10 +8,17 @@ public class SoundManager : MonoBehaviour
     public List<SoundLibrary> soundLib = new List<SoundLibrary>();
     public AudioSource audioSource;
 
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
 
     public void PlaySound(string soundName)
     {
-        audioSource.PlayOneShot(soundLib.Find(x => x.audioName == soundName).audioClip);
+        audioSource.PlayOneShot(soundLib[0].audioClip);
     }
 
 }

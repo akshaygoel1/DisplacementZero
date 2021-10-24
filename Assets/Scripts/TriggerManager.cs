@@ -13,7 +13,9 @@ public enum Scenarios
     WifeDrink,
     SistersDrink,
     CeoWallet,
-    ConductorKey
+    ConductorKey,
+    WifeBracelet,
+    WifeEnd
 }
 
 
@@ -114,6 +116,27 @@ public class TriggerManager : MonoBehaviour
         }
     }
 
+    public void TriggerWifeBracelet()
+    {
+        if (IsNewScenario(Scenarios.WifeBracelet))
+        {
+            eWife.SetActive(true);
+            currentScenario = Scenarios.WifeBracelet;
+            currentEActive = eWife;
+        }
+    }
+
+
+    public void TriggerWifeEnd()
+    {
+        if (IsNewScenario(Scenarios.WifeEnd))
+        {
+            eWife.SetActive(true);
+            currentScenario = Scenarios.WifeEnd;
+            currentEActive = eWife;
+        }
+    }
+
     public bool IsNewScenario(Scenarios scenario)
     {
         if(completedScenarios.Exists(x=>x == (int)scenario))
@@ -129,6 +152,8 @@ public class TriggerManager : MonoBehaviour
         eDad.SetActive(false);
         eBartender.SetActive(false);
         eSisters.SetActive(false);
+        eCeo.SetActive(false);
+        eConductor.SetActive(false); 
         currentScenario = Scenarios.None;
     }
 
@@ -179,7 +204,7 @@ public class TriggerManager : MonoBehaviour
             }
             if (currentScenario == Scenarios.WifeDrink)
             {
-                DialogueParser.instance.TriggerConversation(3);
+                DialogueParser.instance.TriggerConversation(8);
                 completedScenarios.Add((int)Scenarios.WifeDrink);
                 Inventory.instance.RemoveItem(Item.Drink2);
 
@@ -197,6 +222,7 @@ public class TriggerManager : MonoBehaviour
                 completedScenarios.Add((int)Scenarios.CeoWallet);
                 Inventory.instance.RemoveItem(Item.Wallet);
                 DialogueParser.instance.AddTriggerObtained("metceo");
+                PlayerPrefs.SetInt("metceo", 1);
 
             }
             if (currentScenario == Scenarios.ConductorKey)
@@ -204,6 +230,17 @@ public class TriggerManager : MonoBehaviour
                 DialogueParser.instance.TriggerConversation(7);
                 completedScenarios.Add((int)Scenarios.ConductorKey);
 
+            }
+            if (currentScenario == Scenarios.WifeBracelet)
+            {
+                DialogueParser.instance.TriggerConversation(9);
+                completedScenarios.Add((int)Scenarios.WifeBracelet);
+                Inventory.instance.RemoveItem(Item.Bracelet);
+            }
+            if (currentScenario == Scenarios.WifeEnd)
+            {
+                DialogueParser.instance.TriggerConversation(10);
+                completedScenarios.Add((int)Scenarios.WifeEnd);
             }
 
         }

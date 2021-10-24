@@ -32,15 +32,15 @@ MonoBehaviour:
     PortName: Sometimes, and that's okay.
     TargetNodeGUID: c7c691c9-dd32-4a79-bbd5-8ebfdd7e3716
   DialogueNodeData:
-  - NodeGUID: 3be01ca1-b0ab-4a38-b59d-b5889255412f
-    DialogueText: 'Oh you got that for me luv? Fiery fox! Cute! thankyou! '
-    Position: {x: 238, y: 189}
   - NodeGUID: 267c8325-fcfe-4bad-99c6-b431f9def623
     DialogueText: Thanks, I'll enjoy it.
     Position: {x: 723, y: 172}
   - NodeGUID: d0b456d7-a45a-468f-be69-c35f29c22ed2
     DialogueText: You do remember them, sometimes. That's okay. Thankyou.
     Position: {x: 716, y: 305}
+  - NodeGUID: 3be01ca1-b0ab-4a38-b59d-b5889255412f
+    DialogueText: Oh you got that for me luv? Fiery fox! Cute! thankyou!
+    Position: {x: 238, y: 189}
   - NodeGUID: c7c691c9-dd32-4a79-bbd5-8ebfdd7e3716
     DialogueText: You know, It's been pretty chilly in here since a while. Didn't
       expect winter weather inside.

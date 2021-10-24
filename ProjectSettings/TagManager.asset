@@ -24,6 +24,7 @@ TagManager:
   - Conductor
   - Ceo
   - Lock
+  - Bomb
   layers:
   - Default
   - TransparentFX

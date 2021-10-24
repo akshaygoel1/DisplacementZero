@@ -34,7 +34,7 @@ MonoBehaviour:
     TargetNodeGUID: 3bc986ab-8c0f-4d42-8fa3-9470e6527fa8
   DialogueNodeData:
   - NodeGUID: 6ba54872-7e3d-4cbd-a01d-0ea8b77b3888
-    DialogueText: 'Hello Sir. Are you looking for me? '
+    DialogueText: Hello Sir. Are you looking for me?
     Position: {x: 204, y: 203}
   - NodeGUID: a5501b66-52a5-4b03-97f1-c078c078ad07
     DialogueText: Pek Pek Pek! This is my wallet good sir! Where did you find it,
