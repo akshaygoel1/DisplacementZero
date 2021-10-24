@@ -10,6 +10,17 @@ TagManager:
   - Bartender
   - Dad
   - Ticket
+  - Lady1
+  - Lady2
+  - Key
+  - Bag
+  - Screwdriver
+  - Wirecutters
+  - Drink1
+  - Wallet
+  - Jacket
+  - Drink2
+  - Bracelet
   layers:
   - Default
   - TransparentFX

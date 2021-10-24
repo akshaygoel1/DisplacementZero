@@ -70,4 +70,20 @@ public class CharacterController : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Wife")
+        {
+            TriggerManager.instance.DisableE();
+        }
+        else if (collision.gameObject.tag == "Bartender")
+        {
+            TriggerManager.instance.DisableE();
+        }
+        else if (collision.gameObject.tag == "Dad")
+        {
+                TriggerManager.instance.DisableE();
+        }
+    }
 }
