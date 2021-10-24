@@ -19,14 +19,8 @@ MonoBehaviour:
   - BaseNodeGUID: 74fb042a-7faf-4918-b974-ee52da981138
     PortName: Next
     TargetNodeGUID: eca9f948-e427-4d74-80a0-16c22796ec75
-  - BaseNodeGUID: e849cdfc-7bd8-4694-ae91-c7b41d4282bd
-    PortName: Can i get a glass of vodka with maltese ice.
-    TargetNodeGUID: 53188f49-9332-494b-8ed7-2f4ee61b78e2
   - BaseNodeGUID: eca9f948-e427-4d74-80a0-16c22796ec75
-    PortName: drown what?
-    TargetNodeGUID: e849cdfc-7bd8-4694-ae91-c7b41d4282bd
-  - BaseNodeGUID: eca9f948-e427-4d74-80a0-16c22796ec75
-    PortName: I want a glass of gin with maltese ice.
+    PortName: Can i get a Fiery Fox Fanta
     TargetNodeGUID: 53188f49-9332-494b-8ed7-2f4ee61b78e2
   - BaseNodeGUID: ca715c62-bfb1-463c-bf37-1d38676ef6e5
     PortName: erm..
@@ -37,13 +31,13 @@ MonoBehaviour:
   - BaseNodeGUID: 53188f49-9332-494b-8ed7-2f4ee61b78e2
     PortName: thanks
     TargetNodeGUID: ca715c62-bfb1-463c-bf37-1d38676ef6e5
+  - BaseNodeGUID: eca9f948-e427-4d74-80a0-16c22796ec75
+    PortName: Can i get a Mellowberry Pina Cola
+    TargetNodeGUID: d379819a-750c-4bb9-be4c-7cd5810e2b80
+  - BaseNodeGUID: d379819a-750c-4bb9-be4c-7cd5810e2b80
+    PortName: thanks
+    TargetNodeGUID: ca715c62-bfb1-463c-bf37-1d38676ef6e5
   DialogueNodeData:
-  - NodeGUID: e849cdfc-7bd8-4694-ae91-c7b41d4282bd
-    DialogueText: to drown whatever is eating your heart.
-    Position: {x: 766, y: 122}
-  - NodeGUID: eca9f948-e427-4d74-80a0-16c22796ec75
-    DialogueText: Hey buddy, what do you want to drink tonight ? to drown them.
-    Position: {x: 218, y: 200}
   - NodeGUID: ca715c62-bfb1-463c-bf37-1d38676ef6e5
     DialogueText: um.. can you do me a favour? This kid forgot his ticket here. Could
       ya drop it to him?
@@ -51,11 +45,17 @@ MonoBehaviour:
   - NodeGUID: e4cecb90-2d82-40c7-84ac-adf2fd52764b
     DialogueText: The drink is on the house! if you help me?
     Position: {x: 2113, y: 186}
+  - NodeGUID: d379819a-750c-4bb9-be4c-7cd5810e2b80
+    DialogueText: Mellowberry pina cola for you! _drink1
+    Position: {x: 873, y: 51}
+  - NodeGUID: 53188f49-9332-494b-8ed7-2f4ee61b78e2
+    DialogueText: Fiery fox fanta for you! _drink2
+    Position: {x: 875, y: 281}
+  - NodeGUID: eca9f948-e427-4d74-80a0-16c22796ec75
+    DialogueText: Hey buddy, what do you want to drink tonight ? to drown them.
+    Position: {x: 244, y: 195}
   - NodeGUID: 4c986b89-1eff-45b4-8dba-bc8a018ac210
     DialogueText: The next compartment! Thanks a lot! _ticket
-    Position: {x: 2498, y: 144}
-  - NodeGUID: 53188f49-9332-494b-8ed7-2f4ee61b78e2
-    DialogueText: here ya go! Enjoy!
-    Position: {x: 1158, y: 207}
+    Position: {x: 2546, y: 182}
   ExposedProperties: []
   CommentBlockData: []

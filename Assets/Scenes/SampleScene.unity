@@ -344,6 +344,34 @@ MonoBehaviour:
     canvas: {fileID: 269279596}
     dialogueText: {fileID: 269279595}
     buttonContainer: {fileID: 269279594}
+  - dialogContainer: {fileID: 11400000, guid: 39af535c8b51f4c5f85450e46009a982, type: 2}
+    canvas: {fileID: 269279596}
+    dialogueText: {fileID: 269279595}
+    buttonContainer: {fileID: 269279594}
+  - dialogContainer: {fileID: 11400000, guid: d1295051f81bd4c1ca8356ff6eab8dcf, type: 2}
+    canvas: {fileID: 2038831021}
+    dialogueText: {fileID: 707092800}
+    buttonContainer: {fileID: 565531930}
+  - dialogContainer: {fileID: 11400000, guid: 3062d8560b2024cd787b7299ab2b72a1, type: 2}
+    canvas: {fileID: 2038831021}
+    dialogueText: {fileID: 707092800}
+    buttonContainer: {fileID: 565531930}
+  - dialogContainer: {fileID: 11400000, guid: e638dd746ec5b4075a53577cd1cc33e8, type: 2}
+    canvas: {fileID: 269279596}
+    dialogueText: {fileID: 269279595}
+    buttonContainer: {fileID: 269279594}
+  - dialogContainer: {fileID: 11400000, guid: 305adb2bc2f5443deb2a232cf377cf6b, type: 2}
+    canvas: {fileID: 269279596}
+    dialogueText: {fileID: 269279595}
+    buttonContainer: {fileID: 269279594}
+  - dialogContainer: {fileID: 11400000, guid: 9aad84fba30f34464ac68a6a12abbd4e, type: 2}
+    canvas: {fileID: 269279596}
+    dialogueText: {fileID: 269279595}
+    buttonContainer: {fileID: 269279594}
+  - dialogContainer: {fileID: 11400000, guid: 9daedf678a8294f1b9e7c9b4cedc2e04, type: 2}
+    canvas: {fileID: 269279596}
+    dialogueText: {fileID: 269279595}
+    buttonContainer: {fileID: 269279594}
   choicePrefab: {fileID: 3102500559854669817, guid: f77c89383fd59cd47a1921c9684d4122,
     type: 3}
 --- !u!4 &106654860
@@ -5717,6 +5745,18 @@ MonoBehaviour:
     itemPrefab: {fileID: 4025763676707000927, guid: fc8c6be96333a1a4bb21eb50136cf3b3,
       type: 3}
     itemName: drink1
+  - item: 7
+    itemPrefab: {fileID: 4025763676707000927, guid: 055af73dc42f7ca4cba0b57fc4df5686,
+      type: 3}
+    itemName: drink2
+  - item: 9
+    itemPrefab: {fileID: 4025763676707000927, guid: e4899fe7b5401764c893c5823eb8053e,
+      type: 3}
+    itemName: jacket
+  - item: 10
+    itemPrefab: {fileID: 4025763676707000927, guid: 1df008dafa684304bb97309d16b9934e,
+      type: 3}
+    itemName: bracelet
   slot1: {fileID: 1975453205}
   slot2: {fileID: 1467120218}
   slot3: {fileID: 2062797096}

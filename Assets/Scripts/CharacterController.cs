@@ -83,7 +83,6 @@ public class CharacterController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Dad")
         {
-
                 TriggerManager.instance.DisableE();
         }
     }

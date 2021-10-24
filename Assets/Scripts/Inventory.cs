@@ -19,6 +19,7 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(string itemType)
     {
+        Debug.Log(itemType);
         itemsInSlot.Add(spriteLib.Find(x => x.itemName == itemType).item);
         GameObject g = Instantiate(spriteLib.Find(x => x.itemName == itemType).itemPrefab, Vector3.zero, Quaternion.identity);
         if (count == 0)
@@ -149,7 +150,9 @@ public enum Item
     WireCutters,
     Drink1,
     Drink2,
-    Key
+    Key,
+    Jacket,
+    Bracelet
 }
 [System.Serializable]
 public class SpriteLibrary
