@@ -10,6 +10,8 @@ TagManager:
   - Bartender
   - Dad
   - Ticket
+  - Lady1
+  - Lady2
   layers:
   - Default
   - TransparentFX
