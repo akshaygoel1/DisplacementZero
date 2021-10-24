@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Otterman2
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: 44854ddb-3c67-4fd8-a44b-51e956503970
+    PortName: Next
+    TargetNodeGUID: d7a8531b-14dc-4a88-a9cd-e61d91549674
+  - BaseNodeGUID: d7a8531b-14dc-4a88-a9cd-e61d91549674
+    PortName: Alright. Did you notice anything suspicious?
+    TargetNodeGUID: f1abc8ee-1ae7-4687-abac-7c9629975db3
+  - BaseNodeGUID: f1abc8ee-1ae7-4687-abac-7c9629975db3
+    PortName: Firecrackers eh? Maybe of the explosive kind.
+    TargetNodeGUID: 3ab57ce1-4b71-44b8-b687-d0f17e8f8860
+  DialogueNodeData:
+  - NodeGUID: d7a8531b-14dc-4a88-a9cd-e61d91549674
+    DialogueText: Oh you got the key? Sounds good, you can enter into the Boiler
+      room!
+    Position: {x: 215, y: 199}
+  - NodeGUID: f1abc8ee-1ae7-4687-abac-7c9629975db3
+    DialogueText: Nothing much, mostly pek sir went inside to test the some firecrackers
+      in the furnace? i guess?
+    Position: {x: 780, y: 200}
+  - NodeGUID: 3ab57ce1-4b71-44b8-b687-d0f17e8f8860
+    DialogueText: 'The explosive kind! He did say he wanted to go out with a boom?
+      i wonder what pek meant. '
+    Position: {x: 1479, y: 201}
+  ExposedProperties: []
+  CommentBlockData: []

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: TicketDad3B
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: 607186fa-8789-4f11-87e4-5c4c060336cf
+    PortName: Next
+    TargetNodeGUID: 77fa0a6a-2df9-4390-b6ed-f20a479b33b3
+  - BaseNodeGUID: 77fa0a6a-2df9-4390-b6ed-f20a479b33b3
+    PortName: That's a pretty hefty bag, sir.
+    TargetNodeGUID: 95303682-fe0d-4eb0-b7dd-50ca483fba2f
+  - BaseNodeGUID: 77fa0a6a-2df9-4390-b6ed-f20a479b33b3
+    PortName: You're welcome.
+    TargetNodeGUID: 4f604d1b-1138-468d-b3c5-7320f61750a6
+  - BaseNodeGUID: e5035973-17a8-4afd-858b-3d15a9dce1d1
+    PortName: hmm?
+    TargetNodeGUID: a407d58d-dc6f-4de9-ba92-20375e43ad3d
+  - BaseNodeGUID: 4f604d1b-1138-468d-b3c5-7320f61750a6
+    PortName: Deserve what?
+    TargetNodeGUID: a407d58d-dc6f-4de9-ba92-20375e43ad3d
+  - BaseNodeGUID: 95303682-fe0d-4eb0-b7dd-50ca483fba2f
+    PortName: Why not store them inside your shell?
+    TargetNodeGUID: e5035973-17a8-4afd-858b-3d15a9dce1d1
+  DialogueNodeData:
+  - NodeGUID: 77fa0a6a-2df9-4390-b6ed-f20a479b33b3
+    DialogueText: Hohoho my bag! Thankyou forfinding and returning this young man.
+    Position: {x: 206, y: 200}
+  - NodeGUID: 95303682-fe0d-4eb0-b7dd-50ca483fba2f
+    DialogueText: It is! Well as you, i know machines, in and out. So i carry tools
+      wherever i go.
+    Position: {x: 770, y: 115}
+  - NodeGUID: e5035973-17a8-4afd-858b-3d15a9dce1d1
+    DialogueText: Hohoho, that's already filled with my kid's toys. Although here
+      is something for you.
+    Position: {x: 1388, y: 111}
+  - NodeGUID: a407d58d-dc6f-4de9-ba92-20375e43ad3d
+    DialogueText: This screwdriver! you never know when it might come in need! _screwdriver
+    Position: {x: 2045, y: 253}
+  - NodeGUID: 4f604d1b-1138-468d-b3c5-7320f61750a6
+    DialogueText: This was very humble of you, straight-faced man. I think you deserve
+      this.
+    Position: {x: 1012, y: 261}
+  ExposedProperties: []
+  CommentBlockData: []

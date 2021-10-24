@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Sisterz2
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: e60c3179-92f1-4e64-8bd7-a44d20cf6f5f
+    PortName: Next
+    TargetNodeGUID: 2a5fd02b-d707-4ac0-bd8f-fa951e8f0300
+  - BaseNodeGUID: 2a5fd02b-d707-4ac0-bd8f-fa951e8f0300
+    PortName: you can enjoy this drink, yes.
+    TargetNodeGUID: 0199cef5-35f0-400f-9b48-9fc443aae799
+  - BaseNodeGUID: 0199cef5-35f0-400f-9b48-9fc443aae799
+    PortName: You're welcome. Have a great trip.
+    TargetNodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
+  - BaseNodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
+    PortName: _Wirecutters
+    TargetNodeGUID: 12e1fbb7-7bf1-4cfc-999c-62240c0491b5
+  - BaseNodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
+    PortName: '_Bracelet '
+    TargetNodeGUID: b1740efb-3f19-45f7-af27-b01911b80986
+  DialogueNodeData:
+  - NodeGUID: 2a5fd02b-d707-4ac0-bd8f-fa951e8f0300
+    DialogueText: Oh my god, a Mellowbery pina cola! For me?
+    Position: {x: 220, y: 199}
+  - NodeGUID: 0199cef5-35f0-400f-9b48-9fc443aae799
+    DialogueText: Thankyou very much! This is exactly what i wanted, with this view
+      :')
+    Position: {x: 675, y: 199}
+  - NodeGUID: fcb35767-2155-4d2d-85b5-90a5734fdd65
+    DialogueText: Wait a minute! before you go, i'd want you to have this.
+    Position: {x: 1249, y: 198}
+  - NodeGUID: b1740efb-3f19-45f7-af27-b01911b80986
+    DialogueText: This will help you connect with the people you hold dear. Keep
+      them close.
+    Position: {x: 1768, y: 163}
+  - NodeGUID: 12e1fbb7-7bf1-4cfc-999c-62240c0491b5
+    DialogueText: This will help to sever ties with objects that might break or change
+      you or  keep you stuck in a loop.
+    Position: {x: 1769, y: 267}
+  ExposedProperties: []
+  CommentBlockData: []

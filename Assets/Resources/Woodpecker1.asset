@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b3fd9154634ebdb8c8a48960b9a16a, type: 3}
+  m_Name: Woodpecker1
+  m_EditorClassIdentifier: 
+  timeToTrigger: 0
+  isAutomated: 0
+  triggerOnObject: 
+  NodeLinks:
+  - BaseNodeGUID: 19a22afd-6e5f-44c0-a000-f7e744d665ca
+    PortName: Next
+    TargetNodeGUID: 6ba54872-7e3d-4cbd-a01d-0ea8b77b3888
+  - BaseNodeGUID: 6ba54872-7e3d-4cbd-a01d-0ea8b77b3888
+    PortName: Is this your wallet by any chance, sir?
+    TargetNodeGUID: a5501b66-52a5-4b03-97f1-c078c078ad07
+  - BaseNodeGUID: 6ba54872-7e3d-4cbd-a01d-0ea8b77b3888
+    PortName: it seems you might have lost your wallet, and all the wood carvings
+      inside of it.
+    TargetNodeGUID: a5501b66-52a5-4b03-97f1-c078c078ad07
+  - BaseNodeGUID: a5501b66-52a5-4b03-97f1-c078c078ad07
+    PortName: There's a tree inside the train?
+    TargetNodeGUID: 87566fb0-4787-4f52-ae00-dc7228c49f8b
+  - BaseNodeGUID: 87566fb0-4787-4f52-ae00-dc7228c49f8b
+    PortName: No problem, do keep in mind next time. pek.
+    TargetNodeGUID: 3bc986ab-8c0f-4d42-8fa3-9470e6527fa8
+  DialogueNodeData:
+  - NodeGUID: 6ba54872-7e3d-4cbd-a01d-0ea8b77b3888
+    DialogueText: 'Hello Sir. Are you looking for me? '
+    Position: {x: 204, y: 203}
+  - NodeGUID: a5501b66-52a5-4b03-97f1-c078c078ad07
+    DialogueText: Pek Pek Pek! This is my wallet good sir! Where did you find it,
+      by the birch tree?
+    Position: {x: 822, y: 217}
+  - NodeGUID: 87566fb0-4787-4f52-ae00-dc7228c49f8b
+    DialogueText: Pek Pek! It's the Birch tree! Although i might have dropped it
+      while i was flying here.
+    Position: {x: 1429, y: 218}
+  - NodeGUID: 3bc986ab-8c0f-4d42-8fa3-9470e6527fa8
+    DialogueText: I might be small in size, but im a big shot in the train. If you
+      need any help, just say francis pek said pek!
+    Position: {x: 2071, y: 217}
+  ExposedProperties: []
+  CommentBlockData: []
