@@ -62,6 +62,7 @@ public class TriggerManager : MonoBehaviour
         eWife.SetActive(false);
         eDad.SetActive(false);
         eBartender.SetActive(false);
+        currentScenario = Scenarios.None;
     }
 
     private void Awake()

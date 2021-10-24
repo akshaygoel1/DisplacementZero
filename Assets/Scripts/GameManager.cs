@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
     public int timerCounter = 120;
     bool isTimerOn = false;
     public CinemachineVirtualCamera cmFreeCam;
-
+    public GameObject explosion;
+    public GameObject whiteScreen;
+    public AudioSource bgMusic;
     private void Awake()
     {
         if (instance == null)
@@ -46,9 +48,25 @@ public class GameManager : MonoBehaviour
 
             if (timerCounter <= 0)
             {
-                SceneManager.LoadScene("SampleScene");
+                StartExplosion();
             }
         }
+    }
+
+    public void StartExplosion()
+    {
+        bgMusic.enabled = false;
+        StartCoroutine(Exp());
+    }
+
+    IEnumerator Exp()
+    {
+        explosion.gameObject.SetActive(true);
+        //trigger sound
+        yield return new WaitForSeconds(2);
+        whiteScreen.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("SampleScene");
     }
 
     private IEnumerator _ProcessShake(float shakeIntensity =3f, float shakeTiming = 0.5f)
