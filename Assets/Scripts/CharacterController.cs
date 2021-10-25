@@ -32,7 +32,13 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             currentSpeed = runSpeed;
         }
@@ -41,7 +47,7 @@ public class CharacterController : MonoBehaviour
             currentSpeed = speed;
         }
 
-        
+
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             player.transform.position = new Vector3(player.transform.position.x + currentSpeed * Time.deltaTime, player.transform.position.y, player.transform.position.z);
@@ -92,12 +98,12 @@ public class CharacterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Start")
+        if (collision.gameObject.tag == "Start")
         {
             GameManager.instance.StartTimer();
         }
 
-        else if(collision.gameObject.tag == "Wife")
+        else if (collision.gameObject.tag == "Wife")
         {
             if (PlayerPrefs.GetInt("diffuse", 0) == 1)
             {
@@ -120,7 +126,7 @@ public class CharacterController : MonoBehaviour
         {
             TriggerManager.instance.TriggerIntroBartender();
         }
-        else if(collision.gameObject.tag == "Dad")
+        else if (collision.gameObject.tag == "Dad")
         {
             if (Inventory.instance.InventoryContains(Item.Ticket))
             {
@@ -131,9 +137,10 @@ public class CharacterController : MonoBehaviour
                 TriggerManager.instance.TriggerBagDad();
             }
         }
-        else if(collision.gameObject.tag == "Lady1")
+        else if (collision.gameObject.tag == "Lady1")
         {
-            if (TriggerManager.instance.IsNewScenario(Scenarios.SistersIntro)) {
+            if (TriggerManager.instance.IsNewScenario(Scenarios.SistersIntro))
+            {
                 TriggerManager.instance.TriggerIntroSisters();
             }
 
@@ -168,7 +175,7 @@ public class CharacterController : MonoBehaviour
         else if (collision.gameObject.tag == "Bomb")
         {
 
-                bombE.SetActive(true);
+            bombE.SetActive(true);
 
         }
 
@@ -186,7 +193,7 @@ public class CharacterController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Dad")
         {
-                TriggerManager.instance.DisableE();
+            TriggerManager.instance.DisableE();
         }
         else if (collision.gameObject.tag == "Lady1")
         {
@@ -208,7 +215,7 @@ public class CharacterController : MonoBehaviour
 
     void DisarmBomb()
     {
-        if(bombStep == 0)
+        if (bombStep == 0)
         {
             if (Inventory.instance.InventoryContains(Item.Screwdriver))
             {
@@ -217,7 +224,7 @@ public class CharacterController : MonoBehaviour
                 Inventory.instance.RemoveItem(Item.Screwdriver);
             }
         }
-        if(bombStep == 1)
+        if (bombStep == 1)
         {
             if (Inventory.instance.InventoryContains(Item.WireCutters))
             {
@@ -227,7 +234,7 @@ public class CharacterController : MonoBehaviour
 
             }
         }
-        if(bombStep == 2)
+        if (bombStep == 2)
         {
             textInput.SetActive(true);
             bombStep++;
