@@ -48,16 +48,16 @@ MonoBehaviour:
     DialogueText: That moment...it was really precious to us right?
     Position: {x: 686, y: 269}
   - NodeGUID: f9d004f2-f6fe-4492-914c-d2a0a457180b
-    DialogueText: 'Several years, when we were younger, i remember we watched the
-      sunset together and you proposed to me. '
+    DialogueText: Several years, when we were younger, i remember we watched the
+      sunset together and you proposed to me.
     Position: {x: 1156, y: 205}
+  - NodeGUID: a2d35845-ede0-4473-84f8-042a7560597a
+    DialogueText: That moment was so special that i even remember the day, 7th of
+      October.
+    Position: {x: 2914, y: 204}
   - NodeGUID: e7d2a76a-321a-49fe-aea6-8aee43b0b37f
     DialogueText: It was one of the happiest days of my life, although you didn't
       have a ring to give to me, so you gave me a bracelet like this one.
     Position: {x: 1948, y: 206}
-  - NodeGUID: a2d35845-ede0-4473-84f8-042a7560597a
-    DialogueText: 'That moment was so special that i even remember the day, 7th of
-      October. '
-    Position: {x: 2914, y: 204}
   ExposedProperties: []
   CommentBlockData: []
